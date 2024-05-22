@@ -1,0 +1,1 @@
+E:\C#\TuPencaUyMobile\TuPencaUy.csproj;x64

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
+             x:Class="TuPencaUy.LoginPage" x:DataType="viewModel:LoginViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Margin="20"
+            Spacing="40">
+            <Image
+                Source="tupencauy_logo.png"
+                HeightRequest="185"
+                Aspect="AspectFit"/>
+
+            <Label
+                Text="Bienvenido a tupenca.uy!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Email"
+                Text="{Binding Email}"/>
+            
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Contraseña" 
+                IsPassword="True"
+                Text="{Binding Password}"/>
+
+            <Button
+                x:Name="LoginBtn"
+                Text="Login"
+                SemanticProperties.Hint="Login"
+                Command="{Binding Path=LoginCommand}"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
