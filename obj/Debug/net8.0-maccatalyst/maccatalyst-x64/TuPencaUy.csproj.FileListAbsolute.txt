@@ -291,6 +291,7 @@ E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\TuPencaUy.Gen
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\TuPencaUy.AssemblyInfoInputs.cache
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\TuPencaUy.AssemblyInfo.cs
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\TuPencaUy.csproj.CoreCompileInputs.cache
+E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\TuPencaUy.sourcelink.json
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\XamlC.stamp
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\TuPencaUy.csproj.Up2Date
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\TuPencaUy.dll

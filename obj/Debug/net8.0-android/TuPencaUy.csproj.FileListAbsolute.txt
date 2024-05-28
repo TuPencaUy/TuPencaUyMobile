@@ -110,6 +110,7 @@ E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\TuPencaUy.GeneratedMSBuildEditorC
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\TuPencaUy.AssemblyInfoInputs.cache
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\TuPencaUy.AssemblyInfo.cs
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\TuPencaUy.csproj.CoreCompileInputs.cache
+E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\TuPencaUy.sourcelink.json
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\XamlC.stamp
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\TuPencaUy.dll
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\TuPencaUy.pdb
@@ -269,6 +270,7 @@ E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Net.WebSock
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Numerics.dll
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Numerics.Vectors.dll
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.ObjectModel.dll
+E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Private.DataContractSerialization.dll
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Private.Uri.dll
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Private.Xml.dll
@@ -1034,4 +1036,3 @@ E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\stamp\_ConvertResourcesCases.stam
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
-E:\C#\TuPencaUyMobile\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll

@@ -16,24 +16,6 @@ build_property.ProjectDir = E:\C#\TuPencaUyMobile\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[E:/C\#/TuPencaUyMobile/App.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.App.xaml
-build_metadata.AdditionalFiles.TargetPath = App.xaml
-build_metadata.AdditionalFiles.RelativePath = App.xaml
-
-[E:/C\#/TuPencaUyMobile/AppShell.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.AppShell.xaml
-build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
-build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
-
-[E:/C\#/TuPencaUyMobile/LoginPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.LoginPage.xaml
-build_metadata.AdditionalFiles.TargetPath = LoginPage.xaml
-build_metadata.AdditionalFiles.RelativePath = LoginPage.xaml
-
 [E:/C\#/TuPencaUyMobile/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Resources.Styles.Colors.xaml
@@ -46,14 +28,32 @@ build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Resources.Styles
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[E:/C\#/TuPencaUyMobile/SelectSitePage.xaml]
+[E:/C\#/TuPencaUyMobile/Views/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.SelectSitePage.xaml
-build_metadata.AdditionalFiles.TargetPath = SelectSitePage.xaml
-build_metadata.AdditionalFiles.RelativePath = SelectSitePage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.App.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\App.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\App.xaml
 
-[E:/C\#/TuPencaUyMobile/StartPage.xaml]
+[E:/C\#/TuPencaUyMobile/Views/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.StartPage.xaml
-build_metadata.AdditionalFiles.TargetPath = StartPage.xaml
-build_metadata.AdditionalFiles.RelativePath = StartPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AppShell.xaml
+
+[E:/C\#/TuPencaUyMobile/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[E:/C\#/TuPencaUyMobile/Views/SelectSitePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.SelectSitePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SelectSitePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SelectSitePage.xaml
+
+[E:/C\#/TuPencaUyMobile/Views/StartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.StartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\StartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\StartPage.xaml
