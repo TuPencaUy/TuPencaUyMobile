@@ -3,16 +3,20 @@
     x:Class="TuPencaUy.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TuPencaUy"
+    xmlns:views="clr-namespace:TuPencaUy.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="TuPencaUy">
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:SelectSitePage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate views:SelectSitePage}"
+        Route="SelectSitePage" />
     
     <ShellContent
-        ContentTemplate="{DataTemplate local:StartPage}"
+        ContentTemplate="{DataTemplate views:StartPage}"
         Route="StartPage" />
+    
+    <ShellContent
+        ContentTemplate="{DataTemplate views:ProfilePage}"
+        Route="ProfilePage" />
 
 </Shell>

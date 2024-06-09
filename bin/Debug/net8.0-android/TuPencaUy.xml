@@ -4,7 +4,7 @@
         <name>TuPencaUy</name>
     </assembly>
     <members>
-        <member name="M:TuPencaUy.Services.UserService.MyRegex">
+        <member name="M:TuPencaUy.Services.SessionService.MyRegex">
             <remarks>
             Pattern:<br/>
             <code>https://(.*?).tupenca.uy/</code><br/>
@@ -23,6 +23,7 @@
         <member name="T:TuPencaUy.ViewModel.LoginViewModel">
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TuPencaUy.ViewModel.LoginViewModel.Email">
             <inheritdoc cref="F:TuPencaUy.ViewModel.LoginViewModel._email"/>
@@ -36,6 +37,21 @@
         <member name="P:TuPencaUy.ViewModel.LoginViewModel.LoginCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.LoginViewModel.Login"/>.</summary>
         </member>
+        <member name="F:TuPencaUy.ViewModel.LoginViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.LoginViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.LoginViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.LoginViewModel.Register"/>.</summary>
+        </member>
+        <member name="T:TuPencaUy.ViewModel.ProfileViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:TuPencaUy.ViewModel.ProfileViewModel.logoutCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.ProfileViewModel.LogoutCommand"/>.</summary>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.ProfileViewModel.LogoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.ProfileViewModel.Logout"/>.</summary>
+        </member>
         <member name="T:TuPencaUy.ViewModel.SelectSiteViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -48,6 +64,34 @@
         </member>
         <member name="P:TuPencaUy.ViewModel.SelectSiteViewModel.TapCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.SelectSiteViewModel.Tap"/>.</summary>
+        </member>
+        <member name="T:TuPencaUy.ViewModel.SignupViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.SignupViewModel.Name">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.SignupViewModel._name"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.SignupViewModel.Email">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.SignupViewModel._email"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.SignupViewModel.Password">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.SignupViewModel._password"/>
+        </member>
+        <member name="F:TuPencaUy.ViewModel.SignupViewModel.signupCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.SignupViewModel.SignupCommand"/>.</summary>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.SignupViewModel.SignupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.SignupViewModel.Signup"/>.</summary>
+        </member>
+        <member name="T:TuPencaUy.ViewModel.StartViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:TuPencaUy.ViewModel.StartViewModel.tapCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.StartViewModel.TapCommand"/>.</summary>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.StartViewModel.TapCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.StartViewModel.Tap"/>.</summary>
         </member>
         <member name="T:System.Text.RegularExpressions.Generated.MyRegex_0">
             <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the MyRegex method.</summary>
@@ -105,6 +149,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SiteUrl">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -119,6 +166,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SiteUrl">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
         </member>
     </members>
 </doc>

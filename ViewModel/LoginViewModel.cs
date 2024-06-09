@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using TuPencaUy.Models;
 using TuPencaUy.Services;
+using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
 
@@ -11,24 +12,24 @@ public partial class LoginViewModel : ObservableObject
     [ObservableProperty] private string? _email;
     [ObservableProperty] private string? _password;
 
-    private readonly IUserService? _userService;
-    private string? siteUrl { get; set; }
+    private readonly ISessionService _sessionService;
+    private string? SiteUrl { get; set; }
 
-    public LoginViewModel(IUserService userService)
+    public LoginViewModel(ISessionService sessionService)
     {
-        _userService = userService;
+        _sessionService = sessionService;
         
         if (!WeakReferenceMessenger.Default.IsRegistered<DataMessage>(this))
         {
             WeakReferenceMessenger.Default.Register<DataMessage>(this,
-                (recipient, message) => siteUrl = message.Value);
+                (recipient, message) => SiteUrl = message.Value);
         }
     }
     
     [RelayCommand]
     private async Task Login()
     {
-        var loginResult = await _userService.Login(siteUrl, Email, Password);
+        var loginResult = await _sessionService.Login(SiteUrl, Email, Password);
         
         if (loginResult is { Error: true })
         {
@@ -36,9 +37,15 @@ public partial class LoginViewModel : ObservableObject
         }
         else
         {
-            _userService.SaveUser(loginResult.Data.user);
+            _sessionService.SaveSession(loginResult.Data);
             await Shell.Current.GoToAsync($"///{nameof(StartPage)}");
         }
     }
     
+    [RelayCommand]
+    private async Task Register()
+    {
+        await Shell.Current.GoToAsync(nameof(SignupPage));
+        WeakReferenceMessenger.Default.Send(new DataMessage(SiteUrl));
+    }
 }

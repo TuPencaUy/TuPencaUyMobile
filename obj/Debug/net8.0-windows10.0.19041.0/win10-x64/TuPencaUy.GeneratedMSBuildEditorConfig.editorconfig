@@ -42,11 +42,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.LoginPage.
 build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
 
+[E:/C\#/TuPencaUyMobile/Views/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProfilePage.xaml
+
 [E:/C\#/TuPencaUyMobile/Views/SelectSitePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.SelectSitePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SelectSitePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SelectSitePage.xaml
+
+[E:/C\#/TuPencaUyMobile/Views/SignupPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.SignupPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SignupPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SignupPage.xaml
 
 [E:/C\#/TuPencaUyMobile/Views/StartPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
