@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7215841621",
+    "project_id": "tupencauy-65abe",
+    "storage_bucket": "tupencauy-65abe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7215841621:android:c5870b2347a74c1fb0efdc",
+        "android_client_info": {
+          "package_name": "com.companyname.tupencauy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUgkjDInDsBkp9bV6WJVJg0eCfOU-UopE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

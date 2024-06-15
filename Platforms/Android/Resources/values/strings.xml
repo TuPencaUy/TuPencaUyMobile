@@ -1,0 +1,4 @@
+<resources>
+    <string name="com.crashlytics.android.build_id">none</string>
+    <string name="default_notification_channel_id">ur_package_name.general</string>
+</resources>

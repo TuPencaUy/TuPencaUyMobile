@@ -1,3 +1,4 @@
+Auth0.OidcClient.dll
 GoogleGson.dll
 Jsr305Binding.dll
 MauiIcons.Core.dll
@@ -164,6 +165,7 @@ Xamarin.Kotlin.StdLib.dll
 Xamarin.Kotlin.StdLib.Jdk7.dll
 Xamarin.Kotlin.StdLib.Jdk8.dll
 Xamarin.KotlinX.Coroutines.Android.dll
+Xamarin.KotlinX.Coroutines.Core.dll
 Xamarin.KotlinX.Coroutines.Core.Jvm.dll
 Xamarin.KotlinX.Coroutines.Play.Services.dll
 Xamarin.Protobuf.JavaLite.dll
