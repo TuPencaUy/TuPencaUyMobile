@@ -11,7 +11,7 @@ public partial class SelectSiteViewModel : ObservableObject
 
     [RelayCommand]
     private async Task Tap()
-    {
+    { 
         if (SiteUrl != null)
         {
             await Shell.Current.GoToAsync(nameof(LoginPage));

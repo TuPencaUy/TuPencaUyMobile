@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TuPencaUy.ViewModel;
 
-namespace TuPencaUy;
+namespace TuPencaUy.Views;
 
 public partial class StartPage : ContentPage
 {
-    public StartPage()
+    public StartPage(StartViewModel startViewModel)
     {
         InitializeComponent();
+        BindingContext = startViewModel;
     }
 }

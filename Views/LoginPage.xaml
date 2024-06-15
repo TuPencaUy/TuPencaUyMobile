@@ -8,8 +8,7 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
-            Margin="20"
-            Spacing="40">
+            Margin="20">
             <Image
                 Source="tupencauy_logo.png"
                 HeightRequest="185"
@@ -18,24 +17,34 @@
             <Label
                 Text="Bienvenido a tupenca.uy!"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                SemanticProperties.HeadingLevel="Level1" 
+                Margin="40"/>
 
             <Entry
                 x:Name="EmailEntry"
                 Placeholder="Email"
-                Text="{Binding Email}"/>
+                Text="{Binding Email}"
+                Margin="0, 0, 0, 20"/>
             
             <Entry
                 x:Name="PasswordEntry"
                 Placeholder="Contraseña" 
                 IsPassword="True"
-                Text="{Binding Password}"/>
+                Text="{Binding Password}"
+                Margin="0, 0, 0, 20"/>
 
             <Button
                 x:Name="LoginBtn"
                 Text="Login"
                 SemanticProperties.Hint="Login"
                 Command="{Binding Path=LoginCommand}"
+                HorizontalOptions="Fill"
+                Margin="0, 0, 0, 10"/>
+            <Button
+                x:Name="RegisterBtn"
+                Text="Signup"
+                SemanticProperties.Hint="Signup"
+                Command="{Binding Path=RegisterCommand}"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>

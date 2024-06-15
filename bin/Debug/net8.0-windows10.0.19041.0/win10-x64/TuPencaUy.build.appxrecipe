@@ -211,6 +211,12 @@
     <AppxPackagedFile Include="C:\Users\Nitram\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nitram\.nuget\packages\aathifmahir.maui.mauiicons.core\3.0.0\lib\net8.0-windows10.0.19041\MauiIcons.Core.dll">
+      <PackagePath>MauiIcons.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nitram\.nuget\packages\aathifmahir.maui.mauiicons.material\3.0.0\lib\net8.0-windows10.0.19041\MauiIcons.Material.dll">
+      <PackagePath>MauiIcons.Material.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nitram\.nuget\packages\communitytoolkit.mvvm\8.2.2\lib\net6.0\CommunityToolkit.Mvvm.dll">
       <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
     </AppxPackagedFile>
