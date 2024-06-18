@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Auth0.OidcClient;
+using Microsoft.Extensions.Logging;
 using TuPencaUy.Services;
 using TuPencaUy.ViewModel;
 
@@ -49,6 +50,15 @@ public static class MauiProgram
         
         builder.Services.AddSingleton<ProfilePage>();
         builder.Services.AddSingleton<ProfileViewModel>();
+        
+        builder.Services.AddSingleton(new Auth0Client(new Auth0ClientOptions
+        {
+            Domain = "dev-hj0am7c24rdsc5za.us.auth0.com",
+            ClientId = "Up5rjNKsFaJRS0ArII9XqwCB9K5Y5PVQ",
+            RedirectUri = "myapp://callback/",
+            PostLogoutRedirectUri = "myapp://callback/",
+            Scope = "openid profile email"
+        }));
         
 #if DEBUG
         builder.Logging.AddDebug();

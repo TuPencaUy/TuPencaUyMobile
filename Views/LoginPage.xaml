@@ -3,6 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
+             xmlns:icons="http://www.aathifmahir.com/dotnet/2022/maui/icons"
              x:Class="TuPencaUy.LoginPage" x:DataType="viewModel:LoginViewModel">
 
     <ScrollView>
@@ -20,6 +21,14 @@
                 SemanticProperties.HeadingLevel="Level1" 
                 Margin="40"/>
 
+            <ImageButton Grid.Column="1"
+                         Margin= "10,10, 20, 10"
+                         CornerRadius="25"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Start"
+                         Command="{Binding Path=LoginAuth0Command}"
+                         Source="google_logo.png"/>
+            
             <Entry
                 x:Name="EmailEntry"
                 Placeholder="Email"

@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.RegularExpressions;
+using Auth0.OidcClient;
 using Newtonsoft.Json;
 using TuPencaUy.Models;
 using TuPencaUy.Views;
@@ -9,11 +10,13 @@ namespace TuPencaUy.Services;
 public partial class SessionService : ISessionService
 {
     private readonly HttpClient _httpClient;
-
-    public SessionService()
+    private readonly Auth0Client _auth0Client;
+    
+    public SessionService(Auth0Client auth0Client)
     {
         _httpClient = new HttpClient();
         _httpClient.BaseAddress = new Uri("http://10.0.2.2:5045");
+        _auth0Client = auth0Client;
     }
 
     
@@ -26,42 +29,55 @@ public partial class SessionService : ISessionService
         return MyRegex().Match(url).Groups[1].Value;
     }
     
+    private async Task<T?> GenerateRequest<T>(string siteUrl, string requestUri, dynamic requestData)
+    {
+        var content = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
+        
+        _httpClient.DefaultRequestHeaders.Remove("currentTenant");
+        _httpClient.DefaultRequestHeaders.Add("currentTenant", GetDomain(siteUrl));
+        var response = await _httpClient.PostAsync(requestUri, content);
+
+        var responseContent = await response.Content.ReadAsStringAsync();
+        
+        return JsonConvert.DeserializeObject<T>(responseContent);
+    }
+    
     public async Task<ApiResponse<SessionData<User>>?> Login(string siteUrl, string email, string password)
     {
+        const string requestUri = "Identity/BasicLogin";
         var loginRequest = new { Email = email, Password = password };
-        var content = new StringContent(JsonConvert.SerializeObject(loginRequest), Encoding.UTF8, "application/json");
-
-        _httpClient.DefaultRequestHeaders.Remove("currentTenant");
-        _httpClient.DefaultRequestHeaders.Add("currentTenant", GetDomain(siteUrl));
-        var response = await _httpClient.PostAsync("Identity/BasicLogin", content);
-
-        var responseContent = await response.Content.ReadAsStringAsync();
-        var loginResponse = JsonConvert.DeserializeObject<ApiResponse<SessionData<User>>>(responseContent);
         
-        return loginResponse;
+        return await GenerateRequest<ApiResponse<SessionData<User>>>(siteUrl, requestUri, loginRequest);
     }
 
+    public async Task<ApiResponse<SessionData<User>>?> LoginAuth0(string siteUrl)
+    {
+        var loginResult = await _auth0Client.LoginAsync();
+        var identityToken = loginResult.TokenResponse.IdentityToken;
+        
+        const string  requestUri = "Identity/OAuthLogin";
+
+        return await GenerateRequest<ApiResponse<SessionData<User>>>(siteUrl, requestUri, identityToken);
+    }
+
+    
     public async Task<ApiResponse<SessionData<User>>?> Signup(string siteUrl, string name, string email, string password)
     {
+        const string  requestUri = "Identity/BasicSignup";
         var registerRequest = new {  Name = name, Email = email, Password = password };
-        var content = new StringContent(JsonConvert.SerializeObject(registerRequest), Encoding.UTF8, "application/json");
-        
-        //TODO: Simplificar
-        _httpClient.DefaultRequestHeaders.Remove("currentTenant");
-        _httpClient.DefaultRequestHeaders.Add("currentTenant", GetDomain(siteUrl));
-        var response = await _httpClient.PostAsync("Identity/BasicSignup", content);
 
-        var responseContent = await response.Content.ReadAsStringAsync();
-        var loginResponse = JsonConvert.DeserializeObject<ApiResponse<SessionData<User>>>(responseContent);
-        
-        return loginResponse;
+        return await GenerateRequest<ApiResponse<SessionData<User>>>(siteUrl, requestUri, registerRequest);
     }
 
-    public void Logout() => SecureStorage.RemoveAll();
+    public async Task Logout()
+    {
+        await _auth0Client.LogoutAsync();
+        SecureStorage.RemoveAll();
+    }
     
     public async void SaveSession(SessionData<User> sessionData)
     {
         var sessionJson = JsonConvert.SerializeObject(sessionData);
-        await SecureStorage.SetAsync("user", sessionJson);
+        await SecureStorage.SetAsync("SESSION", sessionJson);
     }
 }

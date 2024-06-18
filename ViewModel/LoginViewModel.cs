@@ -1,3 +1,4 @@
+using Auth0.OidcClient;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
@@ -14,8 +15,8 @@ public partial class LoginViewModel : ObservableObject
 
     private readonly ISessionService _sessionService;
     private string? SiteUrl { get; set; }
-
-    public LoginViewModel(ISessionService sessionService)
+    
+    public LoginViewModel(ISessionService sessionService, Auth0Client auth0Client)
     {
         _sessionService = sessionService;
         
@@ -31,16 +32,33 @@ public partial class LoginViewModel : ObservableObject
     {
         var loginResult = await _sessionService.Login(SiteUrl, Email, Password);
         
-        if (loginResult is { Error: true })
-        {
-            await Application.Current.MainPage.DisplayAlert("Error al loguearse",loginResult.Message,"OK");
-        }
-        else
+        if (loginResult is { Error: false })
         {
             _sessionService.SaveSession(loginResult.Data);
             await Shell.Current.GoToAsync($"///{nameof(StartPage)}");
         }
+        else
+        {
+            await Application.Current.MainPage.DisplayAlert("Error al loguearse",loginResult.Message,"OK");
+        }
     }
+    
+    [RelayCommand]
+    private async Task LoginAuth0()
+    {
+        var loginResult = await _sessionService.LoginAuth0(SiteUrl);
+        
+        if (loginResult is { Error: false })
+        {
+            _sessionService.SaveSession(loginResult.Data);
+            await Shell.Current.GoToAsync($"///{nameof(StartPage)}");
+        }
+        else
+        {
+            await Application.Current.MainPage.DisplayAlert("Error al loguearse",loginResult.Message,"OK");
+        }
+    }
+    
     
     [RelayCommand]
     private async Task Register()

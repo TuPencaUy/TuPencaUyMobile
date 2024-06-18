@@ -5,12 +5,47 @@
              xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
              x:Class="TuPencaUy.Views.ProfilePage" x:DataType="viewModel:ProfileViewModel">
     <ContentPage.Content>
-        <Button
-            x:Name="LogoutBtn"
-            Text="Logout"
-            SemanticProperties.Hint="Logout"
-            Command="{Binding Path=LogoutCommand}"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"/>
+        <StackLayout >
+            <Label
+                Text="Perfil"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level1"
+                Margin="0,0,0,40"/>
+            
+            <Label
+                Text="Nombre"
+                FontAttributes="Bold"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="15"
+                Margin="20,0,0,10"/>
+            
+            <Label
+                Text="{Binding Name }"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="15"
+                Margin="20,0,0,40"/>
+
+            <Label
+                Text="Correo"
+                FontAttributes="Bold"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="15"
+                Margin="20,0,0,10"/>
+            
+            <Label
+                Text="{Binding Email }"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="15"
+                Margin="20,0,0,40"/>
+            
+            <Button
+                x:Name="LogoutBtn"
+                Text="Cerrar Sesión"
+                SemanticProperties.Hint="Cerrar Sesión"
+                Command="{Binding Path=LogoutCommand}"
+                HorizontalOptions="Center"
+                
+                VerticalOptions="Center"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

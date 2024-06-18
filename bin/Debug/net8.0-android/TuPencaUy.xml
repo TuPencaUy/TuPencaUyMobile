@@ -24,6 +24,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TuPencaUy.ViewModel.LoginViewModel.Email">
             <inheritdoc cref="F:TuPencaUy.ViewModel.LoginViewModel._email"/>
@@ -37,6 +38,12 @@
         <member name="P:TuPencaUy.ViewModel.LoginViewModel.LoginCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.LoginViewModel.Login"/>.</summary>
         </member>
+        <member name="F:TuPencaUy.ViewModel.LoginViewModel.loginAuth0Command">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.LoginViewModel.LoginAuth0Command"/>.</summary>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.LoginViewModel.LoginAuth0Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.LoginViewModel.LoginAuth0"/>.</summary>
+        </member>
         <member name="F:TuPencaUy.ViewModel.LoginViewModel.registerCommand">
             <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.LoginViewModel.RegisterCommand"/>.</summary>
         </member>
@@ -45,6 +52,13 @@
         </member>
         <member name="T:TuPencaUy.ViewModel.ProfileViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.ProfileViewModel.Name">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.ProfileViewModel._name"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.ProfileViewModel.Email">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.ProfileViewModel._email"/>
         </member>
         <member name="F:TuPencaUy.ViewModel.ProfileViewModel.logoutCommand">
             <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.ProfileViewModel.LogoutCommand"/>.</summary>
@@ -146,11 +160,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SiteUrl">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SiteUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -164,11 +178,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SiteUrl">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SiteUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
         </member>
     </members>
 </doc>
