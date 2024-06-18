@@ -1,5 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Newtonsoft.Json;
+using TuPencaUy.Models;
 using TuPencaUy.Services;
 using TuPencaUy.Views;
 
@@ -7,6 +9,20 @@ namespace TuPencaUy.ViewModel;
 
 public partial class ProfileViewModel(ISessionService sessionService) : ObservableObject
 {
+    [ObservableProperty] private string? _name;
+    [ObservableProperty] private string? _email;
+
+    public async void InitializeProfile()
+    {
+        var session = JsonConvert.DeserializeObject<SessionData<User>>(await SecureStorage.GetAsync("SESSION"));
+        var user = session?.user;
+        
+        if(user == null) return;
+        
+        Name = user.Name;
+        Email = user.Email;
+    }
+    
     [RelayCommand]
     private async Task Logout()
     {
@@ -14,7 +30,7 @@ public partial class ProfileViewModel(ISessionService sessionService) : Observab
 
         if (logoutConfirmation)
         {
-            sessionService.Logout();
+            await sessionService.Logout();
             await Shell.Current.GoToAsync($"///{nameof(SelectSitePage)}");
         }
     }

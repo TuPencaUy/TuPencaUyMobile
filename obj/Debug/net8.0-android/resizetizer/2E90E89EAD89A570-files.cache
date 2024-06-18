@@ -1,4 +1,9 @@
 ﻿obj\Debug\net8.0-android\resizetizer\r\drawable\tupencauy_logo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\google_logo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\google_logo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\google_logo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\google_logo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\google_logo.png
 obj\Debug\net8.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 obj\Debug\net8.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 obj\Debug\net8.0-android\resizetizer\r\mipmap-hdpi\appicon.png

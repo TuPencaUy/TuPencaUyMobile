@@ -9,9 +9,19 @@ namespace TuPencaUy.Views;
 
 public partial class ProfilePage : ContentPage
 {
+    private ProfileViewModel _profileViewModel;
+    
     public ProfilePage(ProfileViewModel profileViewModel)
     {
         InitializeComponent();
+        _profileViewModel = profileViewModel;
         BindingContext = profileViewModel;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        
+        _profileViewModel.InitializeProfile();
     }
 }
