@@ -35,6 +35,7 @@ public static class MauiProgram
         builder.UseMauiApp<App>().UseMaterialMauiIcons();
         
         builder.Services.AddSingleton<ISessionService, SessionService>();
+        builder.Services.AddSingleton<IEventService, EventService>();
         
         builder.Services.AddSingleton<SelectSitePage>();
         builder.Services.AddSingleton<SelectSiteViewModel>();
@@ -45,8 +46,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<SignupPage>();
         builder.Services.AddSingleton<SignupViewModel>();
         
-        builder.Services.AddSingleton<StartPage>();
-        builder.Services.AddSingleton<StartViewModel>();
+        builder.Services.AddSingleton<EventsPage>();
+        builder.Services.AddSingleton<EventsViewModel>();
         
         builder.Services.AddSingleton<ProfilePage>();
         builder.Services.AddSingleton<ProfileViewModel>();

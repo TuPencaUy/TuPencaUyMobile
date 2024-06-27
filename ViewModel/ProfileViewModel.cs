@@ -14,7 +14,7 @@ public partial class ProfileViewModel(ISessionService sessionService) : Observab
 
     public async void InitializeProfile()
     {
-        var session = JsonConvert.DeserializeObject<SessionData<User>>(await SecureStorage.GetAsync("SESSION"));
+        var session = JsonConvert.DeserializeObject<SessionData>(await SecureStorage.GetAsync("SESSION") ?? string.Empty);
         var user = session?.user;
         
         if(user == null) return;

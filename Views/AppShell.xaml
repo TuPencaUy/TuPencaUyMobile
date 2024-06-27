@@ -12,8 +12,8 @@
         Route="SelectSitePage" />
     
     <ShellContent
-        ContentTemplate="{DataTemplate views:StartPage}"
-        Route="StartPage" />
+        ContentTemplate="{DataTemplate views:EventsPage}"
+        Route="EventsPage" />
     
     <ShellContent
         ContentTemplate="{DataTemplate views:ProfilePage}"
