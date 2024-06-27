@@ -4,7 +4,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
              xmlns:icons="http://www.aathifmahir.com/dotnet/2022/maui/icons"
-             x:Class="TuPencaUy.Views.StartPage" x:DataType="viewModel:StartViewModel">
+             xmlns:models="clr-namespace:TuPencaUy.Models"
+             x:Class="TuPencaUy.Views.EventsPage" x:DataType="viewModel:EventsViewModel">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -30,22 +31,24 @@
                          Margin= "10,10, 20, 10"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="EndAndExpand"
-                         Command="{Binding Path=TapCommand}"
+                         Command="{Binding Path=OpenProfilePageCommand}"
                          Source="{icons:Material Icon=AccountCircle }"/>
-                
         </Grid>
 
-        <!-- <CollectionView Grid.Row="1" ItemsSource="{Binding Cards}"> -->
-        <!--     <CollectionView.ItemTemplate> -->
-        <!--         <DataTemplate> -->
-        <!--             <Frame Padding="10" Margin="10" BorderColor="Black" CornerRadius="5"> -->
-        <!--                 <StackLayout> -->
-        <!--                     <Label Text="{Binding CardTitle}" FontAttributes="Bold" /> -->
-        <!--                     <Label Text="{Binding CardContent}" /> -->
-        <!--                 </StackLayout> -->
-        <!--             </Frame> -->
-        <!--         </DataTemplate> -->
-        <!--     </CollectionView.ItemTemplate> -->
-        <!-- </CollectionView> -->
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Events}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Event">
+                    <Frame Padding="10" Margin="10" BorderColor="Black" BackgroundColor="WhiteSmoke" CornerRadius="5" HeightRequest="130" >
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=OpenMatchesPageCommand, Source={RelativeSource AncestorType={x:Type viewModel:EventsViewModel}}}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black" />
+                            <Label Text="{Binding EndDate}" TextColor="Black"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>

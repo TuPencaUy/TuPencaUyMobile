@@ -9,7 +9,7 @@ namespace TuPencaUy.Views;
 
 public partial class ProfilePage : ContentPage
 {
-    private ProfileViewModel _profileViewModel;
+    private readonly ProfileViewModel _profileViewModel;
     
     public ProfilePage(ProfileViewModel profileViewModel)
     {

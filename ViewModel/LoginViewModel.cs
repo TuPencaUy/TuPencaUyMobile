@@ -35,7 +35,7 @@ public partial class LoginViewModel : ObservableObject
         if (loginResult is { Error: false })
         {
             _sessionService.SaveSession(loginResult.Data);
-            await Shell.Current.GoToAsync($"///{nameof(StartPage)}");
+            await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
         else
         {
@@ -51,7 +51,7 @@ public partial class LoginViewModel : ObservableObject
         if (loginResult is { Error: false })
         {
             _sessionService.SaveSession(loginResult.Data);
-            await Shell.Current.GoToAsync($"///{nameof(StartPage)}");
+            await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
         else
         {

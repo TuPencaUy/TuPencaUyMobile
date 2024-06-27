@@ -39,7 +39,7 @@ public partial class SignupViewModel : ObservableObject
         else
         {
             _sessionService.SaveSession(registerResult.Data);
-            await Shell.Current.GoToAsync($"///{nameof(StartPage)}");
+            await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
     }
 }

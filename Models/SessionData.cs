@@ -1,8 +1,10 @@
+using Newtonsoft.Json;
+
 namespace TuPencaUy.Models;
 
-public class SessionData<T>(string token, DateTime expiration, T? user)
+public class SessionData(string token, DateTime expiration, User? user)
 {
     public string Token { get; set; } = token;
     public DateTime Expiration { get; set; } = expiration;
-    public T? user { get; set; } = user;
+    public User? user { get; set; } = user;
 }
