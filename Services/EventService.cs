@@ -1,8 +1,9 @@
 using TuPencaUy.Models;
-using Task = Android.Gms.Tasks.Task;
+using TuPencaUy.Services.Interfaces;
 
 namespace TuPencaUy.Services;
 
 public class EventService : BaseService, IEventService
 {
+
 }

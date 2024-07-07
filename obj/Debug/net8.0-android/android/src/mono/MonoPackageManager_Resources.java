@@ -7,6 +7,8 @@ public class MonoPackageManager_Resources {
 		"MauiIcons.Material.dll",
 		"Auth0.OidcClient.Core.dll",
 		"Auth0.OidcClient.dll",
+		"CommunityToolkit.Maui.dll",
+		"CommunityToolkit.Maui.Core.dll",
 		"CommunityToolkit.Mvvm.dll",
 		"GoogleGson.dll",
 		"IdentityModel.dll",

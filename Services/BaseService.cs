@@ -1,6 +1,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using TuPencaUy.Services.Interfaces;
 
 namespace TuPencaUy.Services;
 
@@ -36,12 +37,13 @@ public abstract partial class BaseService : IBaseService
         return JsonConvert.DeserializeObject<T>(responseContent);
     }
     
-    public async Task<T?> GenerateGetRequest<T>(string siteUrl, string requestUri, Dictionary<string, string> headers)
+    public async Task<T?> GenerateGetRequest<T>(string siteUrl, string requestUri)
     {
-        _httpClient.DefaultRequestHeaders.Remove("currentTenant");
-        _httpClient.DefaultRequestHeaders.Add("currentTenant", GetDomain(siteUrl));
+        //TODO: Implementar una vez se solucione problema de back
+        //_httpClient.DefaultRequestHeaders.Remove("currentTenant");
+        //_httpClient.DefaultRequestHeaders.Add("currentTenant", GetDomain(siteUrl));
         var response = await _httpClient.GetAsync(requestUri);
-
+        
         var responseContent = await response.Content.ReadAsStringAsync();
         
         return JsonConvert.DeserializeObject<T>(responseContent);

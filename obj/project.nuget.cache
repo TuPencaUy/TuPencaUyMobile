@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IpnR0slsRqx4b5SpMiSnqo84HWstj1zMcelPuY59AB7xCl7nE4HUiqyn76SA7WSB6ojpqV0Jx5sNv33Uj5Vn4Q==",
+  "dgSpecHash": "kkBrtdMwTR+AlQ8onjaBAnUt69l6z6kmTIPMcWHFds30NVL71kIG2+FnugjXOQfdW26vPw9qB8NBEJXyRgXhhg==",
   "success": true,
   "projectFilePath": "E:\\C#\\TuPencaUyMobile\\TuPencaUy.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\Nitram\\.nuget\\packages\\aathifmahir.maui.mauiicons.material\\3.0.0\\aathifmahir.maui.mauiicons.material.3.0.0.nupkg.sha512",
     "C:\\Users\\Nitram\\.nuget\\packages\\auth0.oidcclient.core\\4.0.1\\auth0.oidcclient.core.4.0.1.nupkg.sha512",
     "C:\\Users\\Nitram\\.nuget\\packages\\auth0.oidcclient.maui\\1.0.1\\auth0.oidcclient.maui.1.0.1.nupkg.sha512",
+    "C:\\Users\\Nitram\\.nuget\\packages\\communitytoolkit.maui\\9.0.2\\communitytoolkit.maui.9.0.2.nupkg.sha512",
+    "C:\\Users\\Nitram\\.nuget\\packages\\communitytoolkit.maui.core\\9.0.2\\communitytoolkit.maui.core.9.0.2.nupkg.sha512",
     "C:\\Users\\Nitram\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\Nitram\\.nuget\\packages\\googlegson\\2.10.1.6\\googlegson.2.10.1.6.nupkg.sha512",
     "C:\\Users\\Nitram\\.nuget\\packages\\identitymodel\\5.2.0\\identitymodel.5.2.0.nupkg.sha512",

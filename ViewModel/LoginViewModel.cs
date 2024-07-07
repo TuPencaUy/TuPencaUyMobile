@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using TuPencaUy.Models;
 using TuPencaUy.Services;
+using TuPencaUy.Services.Interfaces;
 using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
@@ -34,7 +35,7 @@ public partial class LoginViewModel : ObservableObject
         
         if (loginResult is { Error: false })
         {
-            _sessionService.SaveSession(loginResult.Data);
+            _sessionService.SaveSession(loginResult.Data, SiteUrl);
             await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
         else
@@ -50,7 +51,7 @@ public partial class LoginViewModel : ObservableObject
         
         if (loginResult is { Error: false })
         {
-            _sessionService.SaveSession(loginResult.Data);
+            _sessionService.SaveSession(loginResult.Data, SiteUrl);
             await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
         else

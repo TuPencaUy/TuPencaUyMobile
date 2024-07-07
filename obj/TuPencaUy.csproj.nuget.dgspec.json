@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[1.0.1, )"
             },
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.2.2, )"

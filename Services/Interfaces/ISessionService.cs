@@ -1,6 +1,6 @@
 using TuPencaUy.Models;
 
-namespace TuPencaUy.Services;
+namespace TuPencaUy.Services.Interfaces;
 
 public interface ISessionService
 {
@@ -12,5 +12,5 @@ public interface ISessionService
 
     public Task Logout();
 
-    public void SaveSession(SessionData sessionData);
+    public void SaveSession(SessionData sessionData, string siteUrl);
 }

@@ -20,31 +20,34 @@
 
             <Label Grid.Column="0"
                    Text="tupenca.uy"
-                   Margin= "20,10"
+                   Margin="20,10"
                    Style="{StaticResource SubHeadline}"
-                   SemanticProperties.HeadingLevel="Level1" 
+                   SemanticProperties.HeadingLevel="Level1"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand">
             </Label>
 
             <ImageButton Grid.Column="1"
-                         Margin= "10,10, 20, 10"
+                         Margin="10,10, 20, 10"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="EndAndExpand"
                          Command="{Binding Path=OpenProfilePageCommand}"
-                         Source="{icons:Material Icon=AccountCircle }"/>
+                         Source="{icons:Material Icon=AccountCircle }" />
         </Grid>
 
         <CollectionView Grid.Row="1" ItemsSource="{Binding Events}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Event">
-                    <Frame Padding="10" Margin="10" BorderColor="Black" BackgroundColor="WhiteSmoke" CornerRadius="5" HeightRequest="130" >
+                    <Frame Padding="10" Margin="10" BorderColor="Black" BackgroundColor="WhiteSmoke" CornerRadius="5"
+                           HeightRequest="130">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Path=OpenMatchesPageCommand, Source={RelativeSource AncestorType={x:Type viewModel:EventsViewModel}}}"
+                                CommandParameter="{Binding Id}" />
+                        </Frame.GestureRecognizers>
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Path=OpenMatchesPageCommand, Source={RelativeSource AncestorType={x:Type viewModel:EventsViewModel}}}"/>
-                            </StackLayout.GestureRecognizers>
                             <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black" />
-                            <Label Text="{Binding EndDate}" TextColor="Black"/>
+                            <Label Text="{Binding EndDate}" TextColor="Black" />
                         </StackLayout>
                     </Frame>
                 </DataTemplate>

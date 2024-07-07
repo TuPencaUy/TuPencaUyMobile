@@ -1,10 +1,12 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using TuPencaUy.Models;
 using TuPencaUy.Services;
+using TuPencaUy.Services.Interfaces;
 using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
@@ -29,10 +31,10 @@ public partial class EventsViewModel(IEventService eventService) : ObservableObj
     {
         await Shell.Current.GoToAsync(nameof(ProfilePage));
     }
-    
+
     [RelayCommand]
-    private async Task OpenMatchesPage()
+    private async Task OpenMatchesPage(int eventId)
     {
-        await Shell.Current.GoToAsync(nameof(ProfilePage));
+        await Shell.Current.GoToAsync($"{nameof(MatchesPage)}?EventId={eventId}");
     }
 }

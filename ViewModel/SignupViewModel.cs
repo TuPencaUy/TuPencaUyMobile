@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using TuPencaUy.Models;
 using TuPencaUy.Services;
+using TuPencaUy.Services.Interfaces;
 using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
@@ -38,7 +39,7 @@ public partial class SignupViewModel : ObservableObject
         }
         else
         {
-            _sessionService.SaveSession(registerResult.Data);
+            _sessionService.SaveSession(registerResult.Data, siteUrl);
             await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
     }
