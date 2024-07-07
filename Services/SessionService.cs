@@ -1,6 +1,7 @@
 using Auth0.OidcClient;
 using Newtonsoft.Json;
 using TuPencaUy.Models;
+using TuPencaUy.Services.Interfaces;
 
 namespace TuPencaUy.Services;
 
@@ -39,9 +40,10 @@ public class SessionService(Auth0Client auth0Client) : BaseService, ISessionServ
         SecureStorage.RemoveAll();
     }
     
-    public async void SaveSession(SessionData sessionData)
+    public async void SaveSession(SessionData sessionData, string siteUrl)
     {
         var sessionJson = JsonConvert.SerializeObject(sessionData);
         await SecureStorage.SetAsync("SESSION", sessionJson);
+        await SecureStorage.SetAsync("SITE_URL", siteUrl);
     }
 }

@@ -1,4 +1,6 @@
 Auth0.OidcClient.dll
+CommunityToolkit.Maui.Core.dll
+CommunityToolkit.Maui.dll
 GoogleGson.dll
 Jsr305Binding.dll
 MauiIcons.Core.dll

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
+             xmlns:models="clr-namespace:TuPencaUy.Models"
+             xmlns:icons="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             x:Class="TuPencaUy.Views.MatchesPage" x:DataType="viewModel:MatchesViewModel">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Command="{Binding Path=OpenModifyPredictionCommand}"
+            IconImageSource="{icons:Material Icon=List}" />
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <!-- Loading Animation -->
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"
+                               HorizontalOptions="Center" VerticalOptions="Center" />
+            <!-- Error message -->
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsEmpty}">
+                <Image Source="{icons:Material Icon=QuestionMark}" />
+                <Label Text="No se encontraron partidos!" />
+                <!-- Otros elementos de la plantilla -->
+            </StackLayout>
+            <CollectionView ItemsSource="{Binding Matches}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Match">
+                        <Frame Padding="5" Margin="10" BorderColor="Black"
+                               CornerRadius="5"
+                               HeightRequest="180">
+                            <Frame.Triggers>
+                                <DataTrigger TargetType="Frame" Binding="{Binding isEnabled}" Value="True">
+                                    <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="Frame" Binding="{Binding isEnabled}" Value="False">
+                                    <Setter Property="BackgroundColor" Value="LightGray" />
+                                </DataTrigger>
+                            </Frame.Triggers>
+                            <StackLayout Padding="16">
+                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
+                                    <StackLayout Spacing="5" WidthRequest="70" HeightRequest="40">
+                                        <Image Source="tupencauy_logo.png"
+                                               Aspect="AspectFit" />
+                                        <Label Text="{Binding FirstTeam.Name}" FontSize="14" TextColor="Gray"
+                                               HorizontalOptions="Center" />
+                                    </StackLayout>
+                                    <Label Text="VS" FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="Black"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+                                    <StackLayout Spacing="5" WidthRequest="70" HeightRequest="40">
+                                        <Image Source="tupencauy_logo.png"
+                                               Aspect="AspectFit" />
+                                        <Label Text="{Binding SecondTeam.Name}" FontSize="14" TextColor="Gray"
+                                               HorizontalOptions="Center" />
+                                    </StackLayout>
+                                </FlexLayout>
+                                <!-- Match result -->
+                                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Row="0" Grid.Column="0"
+                                        Text="{Binding FirstTeamScore}"
+                                        Margin="0, 25,0,0"
+                                        FontSize="24"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Row="0" Grid.Column="1"
+                                        Text="-"
+                                        Margin="10, 25,10,0"
+                                        FontSize="24"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Row="0" Grid.Column="2"
+                                        Text="{Binding SecondTeamScore}"
+                                        Margin="0, 25,0,0"
+                                        FontSize="24"
+                                        FontAttributes="Bold"
+                                        TextColor="Black"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Text="{Binding Date, StringFormat='{0:MMMM dd yyyy, HH:MM}'}" FontSize="14"
+                                        TextColor="Gray"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+                                    <ImageButton
+                                        BackgroundColor="Black"
+                                        HorizontalOptions="EndAndExpand"
+                                        CornerRadius="15"
+                                        IsVisible="{Binding isEnabled}"
+                                        Command="{Binding Path=OpenModifyPredictionCommand, Source={RelativeSource AncestorType={x:Type viewModel:MatchesViewModel}}}"
+                                        Source="{icons:Material Icon=Edit}"
+                                        Padding="10" />
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>
