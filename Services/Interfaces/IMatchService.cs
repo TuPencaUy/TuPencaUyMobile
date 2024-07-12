@@ -4,5 +4,5 @@ namespace TuPencaUy.Services.Interfaces;
 
 public interface IMatchService
 {
-    public Task<ApiResponse<EventData>?> GetMatches(string siteUrl, int eventId);
+    public Task<ApiResponse<EventData>?> GetMatches(string siteUrl, string token, int eventId);
 }

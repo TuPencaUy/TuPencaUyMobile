@@ -15,7 +15,9 @@ using Plugin.Firebase.Core.Platforms.Android;
 using CommunityToolkit.Maui;
 
 #endif
+
 namespace TuPencaUy;
+
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
@@ -28,22 +30,38 @@ public static class MauiProgram
         }).UseMauiCommunityToolkit();
         // Initialise the .Net Maui Icons - Material
         builder.UseMauiApp<App>().UseMaterialMauiIcons();
+
         builder.Services.AddSingleton<ISessionService, SessionService>();
         builder.Services.AddSingleton<IEventService, EventService>();
         builder.Services.AddSingleton<IMatchService, MatchService>();
+        builder.Services.AddSingleton<IBetService, BetService>();
+
         builder.Services.AddSingleton<SelectSitePage>();
         builder.Services.AddSingleton<SelectSiteViewModel>();
+
         builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<LoginViewModel>();
+
         builder.Services.AddSingleton<SignupPage>();
         builder.Services.AddSingleton<SignupViewModel>();
+
         builder.Services.AddSingleton<EventsPage>();
         builder.Services.AddSingleton<EventsViewModel>();
+
         builder.Services.AddSingleton<ProfilePage>();
         builder.Services.AddSingleton<ProfileViewModel>();
+
         builder.Services.AddTransient<MatchesPage>();
         builder.Services.AddTransient<MatchesViewModel>();
-        builder.Services.AddSingleton(new Auth0Client(new Auth0ClientOptions { Domain = "dev-hj0am7c24rdsc5za.us.auth0.com", ClientId = "Up5rjNKsFaJRS0ArII9XqwCB9K5Y5PVQ", RedirectUri = "myapp://callback/", PostLogoutRedirectUri = "myapp://callback/", Scope = "openid profile email" }));
+
+        builder.Services.AddTransientPopup<BetPopup, BetViewModel>();
+
+        builder.Services.AddSingleton(new Auth0Client(new Auth0ClientOptions
+        {
+            Domain = "dev-hj0am7c24rdsc5za.us.auth0.com", ClientId = "Up5rjNKsFaJRS0ArII9XqwCB9K5Y5PVQ",
+            RedirectUri = "myapp://callback/", PostLogoutRedirectUri = "myapp://callback/",
+            Scope = "openid profile email"
+        }));
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
@@ -60,7 +78,8 @@ public static class MauiProgram
                 return false;
             }));
 #elif ANDROID
-            events.AddAndroid(android => android.OnCreate((activity, _) => CrossFirebase.Initialize(activity: activity)));
+            events.AddAndroid(
+                android => android.OnCreate((activity, _) => CrossFirebase.Initialize(activity: activity)));
 #endif
         });
         builder.Services.AddSingleton(_ => CrossFirebaseAuth.Current);

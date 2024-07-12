@@ -7,31 +7,32 @@ namespace TuPencaUy.Services;
 
 public class SessionService(Auth0Client auth0Client) : BaseService, ISessionService
 {
+    private const string Uri = "identity";
     public async Task<ApiResponse<SessionData>?> Login(string siteUrl, string email, string password)
     {
-        const string requestUri = "Identity/BasicLogin";
-        var loginRequest = new { Email = email, Password = password };
+        const string requestUri = $"{Uri}/BasicLogin";
+        var payload = new { Email = email, Password = password };
         
-        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, loginRequest);
+        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload);
     }
 
     public async Task<ApiResponse<SessionData>?> LoginAuth0(string siteUrl)
     {
         var loginResult = await auth0Client.LoginAsync();
-        var identityToken = loginResult.TokenResponse.IdentityToken;
+        var payload = loginResult.TokenResponse.IdentityToken;
         
-        const string  requestUri = "Identity/OAuthLogin";
+        const string  requestUri = $"{Uri}/OAuthLogin";
 
-        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, identityToken);
+        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload);
     }
 
     
     public async Task<ApiResponse<SessionData>?> Signup(string siteUrl, string name, string email, string password)
     {
-        const string  requestUri = "Identity/BasicSignup";
-        var registerRequest = new {  Name = name, Email = email, Password = password };
+        const string  requestUri = $"{Uri}/BasicSignup";
+        var payload = new {  Name = name, Email = email, Password = password };
 
-        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, registerRequest);
+        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload);
     }
 
     public async Task Logout()

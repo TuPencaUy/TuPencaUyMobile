@@ -8,7 +8,7 @@
              x:Class="TuPencaUy.Views.MatchesPage" x:DataType="viewModel:MatchesViewModel">
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Command="{Binding Path=OpenModifyPredictionCommand}"
+            Command="{Binding Path=OpenBetPopupCommand}"
             IconImageSource="{icons:Material Icon=List}" />
     </ContentPage.ToolbarItems>
     <Grid>
@@ -98,6 +98,34 @@
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center" />
                                 </Grid>
+                                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Margin="0, 10,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Text="{Binding Bet.ScoreFirstTeam}"
+                                        FontSize="16"
+                                        TextColor="Gray"
+                                        Margin="0, 0,0,0"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Column="1" Text="-"
+                                        FontSize="16"
+                                        TextColor="Gray"
+                                        Margin="5, 0,5,0"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Column="2" Text="{Binding Bet.ScoreSecondTeam}"
+                                        FontSize="16"
+                                        TextColor="Gray"
+                                        Margin="0, 0,0,0"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center" />
+                                </Grid>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
@@ -113,7 +141,8 @@
                                         HorizontalOptions="EndAndExpand"
                                         CornerRadius="15"
                                         IsVisible="{Binding isEnabled}"
-                                        Command="{Binding Path=OpenModifyPredictionCommand, Source={RelativeSource AncestorType={x:Type viewModel:MatchesViewModel}}}"
+                                        Command="{Binding Path=OpenBetPopupCommand, Source={RelativeSource AncestorType={x:Type viewModel:MatchesViewModel}}}"
+                                        CommandParameter="{Binding Id}"
                                         Source="{icons:Material Icon=Edit}"
                                         Padding="10" />
                                 </Grid>
