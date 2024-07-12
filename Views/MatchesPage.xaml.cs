@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using TuPencaUy.Models;
 using TuPencaUy.ViewModel;
 
 namespace TuPencaUy.Views;
@@ -16,7 +18,10 @@ public partial class MatchesPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        var siteUrl = await SecureStorage.GetAsync("SITE_URL");
+        var sessionData =
+            JsonConvert.DeserializeObject<SessionData>(await SecureStorage.GetAsync("SESSION") ?? string.Empty);
 
-        _matchesViewModel.InitializeMatches(await SecureStorage.GetAsync("SITE_URL"));
+        await _matchesViewModel.InitializeMatches(siteUrl, sessionData.Token, sessionData.user.Email);
     }
 }

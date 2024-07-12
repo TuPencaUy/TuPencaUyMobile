@@ -40,6 +40,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.AppShell.x
 build_metadata.AdditionalFiles.TargetPath = Views\AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AppShell.xaml
 
+[E:/C\#/TuPencaUyMobile/Views/BetPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.BetPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\BetPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\BetPopup.xaml
+
 [E:/C\#/TuPencaUyMobile/Views/EventsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.EventsPage.xaml
@@ -57,12 +63,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.MatchesPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MatchesPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MatchesPage.xaml
-
-[E:/C\#/TuPencaUyMobile/Views/ModifyPredictionPopup.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.ModifyPredictionPopup.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\ModifyPredictionPopup.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\ModifyPredictionPopup.xaml
 
 [E:/C\#/TuPencaUyMobile/Views/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

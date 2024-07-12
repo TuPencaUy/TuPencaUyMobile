@@ -6,10 +6,12 @@ namespace TuPencaUy.Services;
 
 public class MatchService : BaseService, IMatchService
 {
-    public async Task<ApiResponse<EventData>?> GetMatches(string siteUrl, int eventId)
-    {
-        var requestUri = $"match?eventId={eventId}";
+    private const string Uri = "match";
 
-        return await GenerateGetRequest<ApiResponse<EventData>>(siteUrl, requestUri);
+    public async Task<ApiResponse<EventData>?> GetMatches(string siteUrl, string token, int eventId)
+    {
+        var requestUri = $"{Uri}?eventId={eventId}";
+
+        return await GenerateGetRequest<ApiResponse<EventData>>(siteUrl, requestUri, token);
     }
 }

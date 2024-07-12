@@ -20,6 +20,31 @@
             </code>
             </remarks>
         </member>
+        <member name="T:TuPencaUy.ViewModel.BetViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.BetViewModel.EventId">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.BetViewModel._eventId"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.BetViewModel.MatchId">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.BetViewModel._matchId"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.BetViewModel.Match">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.BetViewModel._match"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.BetViewModel.FirstTeamScore">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.BetViewModel._firstTeamScore"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.BetViewModel.SecondTeamScore">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.BetViewModel._secondTeamScore"/>
+        </member>
+        <member name="F:TuPencaUy.ViewModel.BetViewModel.confirmBetCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.BetViewModel.ConfirmBetCommand"/>.</summary>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.BetViewModel.ConfirmBetCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.BetViewModel.ConfirmBet"/>.</summary>
+        </member>
         <member name="T:TuPencaUy.ViewModel.EventsViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -74,6 +99,9 @@
             <inheritdoc/>
             <inheritdoc/>
         </member>
+        <member name="P:TuPencaUy.ViewModel.MatchesViewModel.EventId">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.MatchesViewModel._eventId"/>
+        </member>
         <member name="P:TuPencaUy.ViewModel.MatchesViewModel.Matches">
             <inheritdoc cref="F:TuPencaUy.ViewModel.MatchesViewModel._matches"/>
         </member>
@@ -83,14 +111,11 @@
         <member name="P:TuPencaUy.ViewModel.MatchesViewModel.IsEmpty">
             <inheritdoc cref="F:TuPencaUy.ViewModel.MatchesViewModel._isEmpty"/>
         </member>
-        <member name="P:TuPencaUy.ViewModel.MatchesViewModel.EventId">
-            <inheritdoc cref="F:TuPencaUy.ViewModel.MatchesViewModel._eventId"/>
+        <member name="F:TuPencaUy.ViewModel.MatchesViewModel.openBetPopupCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.MatchesViewModel.OpenBetPopupCommand"/>.</summary>
         </member>
-        <member name="F:TuPencaUy.ViewModel.MatchesViewModel.openModifyPredictionCommand">
-            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.MatchesViewModel.OpenModifyPredictionCommand"/>.</summary>
-        </member>
-        <member name="P:TuPencaUy.ViewModel.MatchesViewModel.OpenModifyPredictionCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.MatchesViewModel.OpenModifyPrediction"/>.</summary>
+        <member name="P:TuPencaUy.ViewModel.MatchesViewModel.OpenBetPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.MatchesViewModel.OpenBetPopup(System.Int32)"/>.</summary>
         </member>
         <member name="T:TuPencaUy.ViewModel.ProfileViewModel">
             <inheritdoc/>
@@ -307,6 +332,21 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EventId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EventId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MatchId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MatchId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Match">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Match" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FirstTeamScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FirstTeamScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SecondTeamScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SecondTeamScore" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Events">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Events" generated properties.</summary>
         </member>
@@ -325,9 +365,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsEmpty">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsEmpty" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EventId">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EventId" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
         </member>
@@ -339,6 +376,21 @@
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EventId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EventId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MatchId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MatchId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Match">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Match" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FirstTeamScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FirstTeamScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SecondTeamScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SecondTeamScore" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Events">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Events" generated properties.</summary>
@@ -357,9 +409,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsEmpty">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsEmpty" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EventId">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EventId" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
