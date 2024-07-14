@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:TuPencaUy.Models"
+             xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
+             xmlns:icons="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             x:Class="TuPencaUy.Views.LeaderboardPage" x:DataType="viewModel:LeaderboardViewModel">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- Loading Animation -->
+            <ActivityIndicator Grid.Row="1" IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"
+                               HorizontalOptions="Center" VerticalOptions="Center" />
+            <!-- Error message -->
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsEmpty}">
+                <Image Source="{icons:Material Icon=QuestionMark}" />
+                <Label Text="No se obtuvieron resultados." />
+            </StackLayout>
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Participants}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Participant">
+                        <Frame Padding="10" Margin="10" BorderColor="Black" BackgroundColor="WhiteSmoke"
+                               CornerRadius="5"
+                               HeightRequest="115">
+                            <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center"
+                                         Orientation="Horizontal">
+                                <Label Text="{Binding Points}" FontAttributes="Bold" TextColor="Black" FontSize="30"
+                                       Margin="20" />
+                                <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black" FontSize="20" />
+                                    <Label Text="{Binding AccuracyPercentage}" TextColor="Black" />
+                                    <Label Text="{Binding HitsVsTotal}" TextColor="Black" />
+                                    <Label Text="{Binding PartialHitsVsTotal}" TextColor="Black" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

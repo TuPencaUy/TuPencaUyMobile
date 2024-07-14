@@ -31,10 +31,10 @@ public static class MauiProgram
         // Initialise the .Net Maui Icons - Material
         builder.UseMauiApp<App>().UseMaterialMauiIcons();
 
-        builder.Services.AddSingleton<ISessionService, SessionService>();
-        builder.Services.AddSingleton<IEventService, EventService>();
+        builder.Services.AddSingleton<ISessionService, IdentityService>();
         builder.Services.AddSingleton<IMatchService, MatchService>();
         builder.Services.AddSingleton<IBetService, BetService>();
+        builder.Services.AddSingleton<IAnalyticsService, AnalyticsService>();
 
         builder.Services.AddSingleton<SelectSitePage>();
         builder.Services.AddSingleton<SelectSiteViewModel>();
@@ -53,6 +53,9 @@ public static class MauiProgram
 
         builder.Services.AddTransient<MatchesPage>();
         builder.Services.AddTransient<MatchesViewModel>();
+
+        builder.Services.AddTransient<LeaderboardPage>();
+        builder.Services.AddTransient<LeaderboardViewModel>();
 
         builder.Services.AddTransientPopup<BetPopup, BetViewModel>();
 

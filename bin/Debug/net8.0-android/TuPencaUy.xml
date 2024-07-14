@@ -53,6 +53,12 @@
         <member name="P:TuPencaUy.ViewModel.EventsViewModel.Events">
             <inheritdoc cref="F:TuPencaUy.ViewModel.EventsViewModel._events"/>
         </member>
+        <member name="P:TuPencaUy.ViewModel.EventsViewModel.IsLoading">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.EventsViewModel._isLoading"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.EventsViewModel.IsEmpty">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.EventsViewModel._isEmpty"/>
+        </member>
         <member name="F:TuPencaUy.ViewModel.EventsViewModel.openProfilePageCommand">
             <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.EventsViewModel.OpenProfilePageCommand"/>.</summary>
         </member>
@@ -64,6 +70,21 @@
         </member>
         <member name="P:TuPencaUy.ViewModel.EventsViewModel.OpenMatchesPageCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.EventsViewModel.OpenMatchesPage(System.Int32)"/>.</summary>
+        </member>
+        <member name="T:TuPencaUy.ViewModel.LeaderboardViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.LeaderboardViewModel.EventId">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.LeaderboardViewModel._eventId"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.LeaderboardViewModel.Participants">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.LeaderboardViewModel._participants"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.LeaderboardViewModel.IsLoading">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.LeaderboardViewModel._isLoading"/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.LeaderboardViewModel.IsEmpty">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.LeaderboardViewModel._isEmpty"/>
         </member>
         <member name="T:TuPencaUy.ViewModel.LoginViewModel">
             <inheritdoc/>
@@ -98,6 +119,7 @@
         <member name="T:TuPencaUy.ViewModel.MatchesViewModel">
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TuPencaUy.ViewModel.MatchesViewModel.EventId">
             <inheritdoc cref="F:TuPencaUy.ViewModel.MatchesViewModel._eventId"/>
@@ -116,6 +138,12 @@
         </member>
         <member name="P:TuPencaUy.ViewModel.MatchesViewModel.OpenBetPopupCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.MatchesViewModel.OpenBetPopup(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:TuPencaUy.ViewModel.MatchesViewModel.openLeaderboardPageCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.MatchesViewModel.OpenLeaderboardPageCommand"/>.</summary>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.MatchesViewModel.OpenLeaderboardPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.MatchesViewModel.OpenLeaderboardPage"/>.</summary>
         </member>
         <member name="T:TuPencaUy.ViewModel.ProfileViewModel">
             <inheritdoc/>
@@ -350,6 +378,15 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Events">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Events" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsEmpty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsEmpty" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Participants">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Participants" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
         </member>
@@ -358,12 +395,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Matches">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Matches" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsEmpty">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsEmpty" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
@@ -395,6 +426,15 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Events">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Events" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsEmpty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsEmpty" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Participants">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Participants" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
         </member>
@@ -403,12 +443,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Matches">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Matches" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsEmpty">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsEmpty" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
