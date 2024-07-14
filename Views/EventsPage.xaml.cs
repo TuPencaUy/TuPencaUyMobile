@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using TuPencaUy.Models;
 using TuPencaUy.ViewModel;
 
 namespace TuPencaUy.Views;
@@ -5,7 +7,7 @@ namespace TuPencaUy.Views;
 public partial class EventsPage : ContentPage
 {
     private readonly EventsViewModel _eventsViewModel;
-    
+
     public EventsPage(EventsViewModel eventsViewModel)
     {
         InitializeComponent();
@@ -13,10 +15,13 @@ public partial class EventsPage : ContentPage
         BindingContext = _eventsViewModel;
     }
 
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
-        
-        _eventsViewModel.InitializeEvents();
+        var sessionData =
+            JsonConvert.DeserializeObject<SessionData>(await SecureStorage.GetAsync("SESSION") ?? string.Empty);
+        var user = sessionData?.user;
+
+        _eventsViewModel.InitializeEvents(user);
     }
 }

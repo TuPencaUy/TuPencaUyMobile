@@ -8,7 +8,7 @@
              x:Class="TuPencaUy.Views.MatchesPage" x:DataType="viewModel:MatchesViewModel">
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Command="{Binding Path=OpenBetPopupCommand}"
+            Command="{Binding Path=OpenLeaderboardPageCommand}"
             IconImageSource="{icons:Material Icon=List}" />
     </ContentPage.ToolbarItems>
     <Grid>
@@ -23,7 +23,6 @@
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsEmpty}">
                 <Image Source="{icons:Material Icon=QuestionMark}" />
                 <Label Text="No se encontraron partidos!" />
-                <!-- Otros elementos de la plantilla -->
             </StackLayout>
             <CollectionView ItemsSource="{Binding Matches}">
                 <CollectionView.ItemTemplate>
@@ -98,7 +97,8 @@
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center" />
                                 </Grid>
-                                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Margin="0, 10,0,0">
+                                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"
+                                      Margin="0, 10,0,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="Auto" />

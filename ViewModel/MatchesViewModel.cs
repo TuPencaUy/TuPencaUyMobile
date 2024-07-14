@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.IdentityModel.Tokens;
 using TuPencaUy.Models;
 using TuPencaUy.Services.Interfaces;
+using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
 
@@ -60,5 +61,11 @@ public partial class MatchesViewModel(IMatchService matchService, IBetService be
         });
 
         await InitializeMatches(SiteUrl, Token, UserEmail);
+    }
+
+    [RelayCommand]
+    private async Task OpenLeaderboardPage()
+    {
+        await Shell.Current.GoToAsync($"{nameof(LeaderboardPage)}?EventId={EventId}");
     }
 }

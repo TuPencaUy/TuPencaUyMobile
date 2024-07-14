@@ -1,29 +1,28 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using TuPencaUy.Models;
-using TuPencaUy.Services;
-using TuPencaUy.Services.Interfaces;
 using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
 
-public partial class EventsViewModel(IEventService eventService) : ObservableObject
+public partial class EventsViewModel : ObservableObject
 {
     [ObservableProperty] private ObservableCollection<Event> _events = [];
+    [ObservableProperty] private bool _isLoading;
+    [ObservableProperty] private bool _isEmpty;
 
-    public async void InitializeEvents()
+    public void InitializeEvents(User user)
     {
-        var session =
-            JsonConvert.DeserializeObject<SessionData>(await SecureStorage.GetAsync("SESSION") ?? string.Empty);
-        var user = session?.user;
-
-        if (user == null) return;
+        IsEmpty = false;
+        IsLoading = true;
 
         if (!user.Events.IsNullOrEmpty()) Events = new ObservableCollection<Event>(user.Events);
+
+        IsEmpty = Events.IsNullOrEmpty();
+        IsLoading = false;
     }
 
     [RelayCommand]

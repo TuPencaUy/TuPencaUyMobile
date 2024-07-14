@@ -52,6 +52,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.EventsPage
 build_metadata.AdditionalFiles.TargetPath = Views\EventsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EventsPage.xaml
 
+[E:/C\#/TuPencaUyMobile/Views/LeaderboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.LeaderboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LeaderboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LeaderboardPage.xaml
+
 [E:/C\#/TuPencaUyMobile/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TuPencaUy.Views.LoginPage.xaml

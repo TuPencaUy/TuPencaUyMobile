@@ -43,25 +43,27 @@ public abstract partial class BaseService : IBaseService
 
         _httpClient.DefaultRequestHeaders.Remove("currentTenant");
         _httpClient.DefaultRequestHeaders.Add("currentTenant", GetDomain(siteUrl));
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        if (token != null)
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         var response = await _httpClient.PostAsync(requestUri, content);
 
         var responseContent = await response.Content.ReadAsStringAsync();
 
         return JsonConvert.DeserializeObject<T>(responseContent);
     }
-    
+
     public async Task<T?> GeneratePatchRequest<T>(string siteUrl, string requestUri, string? token, dynamic requestData)
     {
         var content = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
-        
+
         _httpClient.DefaultRequestHeaders.Remove("currentTenant");
         _httpClient.DefaultRequestHeaders.Add("currentTenant", GetDomain(siteUrl));
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        if (token != null)
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         var response = await _httpClient.PatchAsync(requestUri, content);
 
         var responseContent = await response.Content.ReadAsStringAsync();
-        
+
         return JsonConvert.DeserializeObject<T>(responseContent);
     }
 }
