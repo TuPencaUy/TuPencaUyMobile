@@ -45,8 +45,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<SignupPage>();
         builder.Services.AddSingleton<SignupViewModel>();
 
-        builder.Services.AddSingleton<EventsPage>();
-        builder.Services.AddSingleton<EventsViewModel>();
+        builder.Services.AddTransient<EventsPage>();
+        builder.Services.AddTransient<EventsViewModel>();
 
         builder.Services.AddSingleton<ProfilePage>();
         builder.Services.AddSingleton<ProfileViewModel>();

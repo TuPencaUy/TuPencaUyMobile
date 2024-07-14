@@ -19,5 +19,6 @@ public class Match(
     public DateTime Date { get; set; } = date;
     public bool Finished { get; set; } = finished;
     public Bet? Bet { get; set; }
+    public bool hasBet => Bet != null;
     public bool isEnabled => (!Finished) && (Date.AddHours(-1.5) >= DateTime.Now);
 }
