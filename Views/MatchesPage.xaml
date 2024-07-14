@@ -5,7 +5,11 @@
              xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
              xmlns:models="clr-namespace:TuPencaUy.Models"
              xmlns:icons="http://www.aathifmahir.com/dotnet/2022/maui/icons"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="TuPencaUy.Views.MatchesPage" x:DataType="viewModel:MatchesViewModel">
+    <ContentPage.Resources>
+            <toolkit:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Command="{Binding Path=OpenLeaderboardPageCommand}"
@@ -41,8 +45,9 @@
                             <StackLayout Padding="16">
                                 <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
                                     <StackLayout Spacing="5" WidthRequest="70" HeightRequest="40">
-                                        <Image Source="tupencauy_logo.png"
-                                               Aspect="AspectFit" />
+                                        <Image
+                                            Source="{Binding FirstTeam.Logo, Mode=OneWay, Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                                            Aspect="AspectFit" />
                                         <Label Text="{Binding FirstTeam.Name}" FontSize="14" TextColor="Gray"
                                                HorizontalOptions="Center" />
                                     </StackLayout>
@@ -52,8 +57,9 @@
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center" />
                                     <StackLayout Spacing="5" WidthRequest="70" HeightRequest="40">
-                                        <Image Source="tupencauy_logo.png"
-                                               Aspect="AspectFit" />
+                                        <Image
+                                            Source="{Binding SecondTeam.Logo, Mode=OneWay, Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                                            Aspect="AspectFit" />
                                         <Label Text="{Binding SecondTeam.Name}" FontSize="14" TextColor="Gray"
                                                HorizontalOptions="Center" />
                                     </StackLayout>
