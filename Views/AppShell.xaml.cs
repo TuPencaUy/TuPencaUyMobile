@@ -1,6 +1,4 @@
-﻿using TuPencaUy.Views;
-
-namespace TuPencaUy;
+﻿namespace TuPencaUy.Views;
 
 public partial class AppShell : Shell
 {

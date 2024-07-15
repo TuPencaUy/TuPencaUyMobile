@@ -1,9 +1,7 @@
-using Auth0.OidcClient;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using TuPencaUy.Models;
-using TuPencaUy.Services;
 using TuPencaUy.Services.Interfaces;
 using TuPencaUy.Views;
 

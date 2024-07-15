@@ -3,7 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
-             x:Class="TuPencaUy.SignupPage" x:DataType="viewModel:SignupViewModel">
+             x:Class="TuPencaUy.Views.SignupPage" x:DataType="viewModel:SignupViewModel">
     <ContentPage.Content>
         <ScrollView>
             <VerticalStackLayout

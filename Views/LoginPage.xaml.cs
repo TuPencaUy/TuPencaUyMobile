@@ -1,6 +1,6 @@
 ﻿using TuPencaUy.ViewModel;
 
-namespace TuPencaUy;
+namespace TuPencaUy.Views;
 
 public partial class LoginPage : ContentPage
 {

@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:TuPencaUy.ViewModel"
              xmlns:icons="http://www.aathifmahir.com/dotnet/2022/maui/icons"
-             x:Class="TuPencaUy.LoginPage" x:DataType="viewModel:LoginViewModel">
+             x:Class="TuPencaUy.Views.LoginPage" x:DataType="viewModel:LoginViewModel">
 
     <ScrollView>
         <VerticalStackLayout

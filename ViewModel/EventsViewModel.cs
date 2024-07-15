@@ -2,7 +2,6 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
 using TuPencaUy.Models;
 using TuPencaUy.Views;
 
