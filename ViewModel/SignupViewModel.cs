@@ -31,7 +31,7 @@ public partial class SignupViewModel : ObservableObject
     [RelayCommand]
     private async Task Signup()
     {
-        var registerResult = await _sessionService.Signup(siteUrl, _name, Email, Password);
+        var registerResult = await _sessionService.Signup(siteUrl, Name, Email, Password);
         
         if (registerResult is { Error: true })
         {

@@ -25,7 +25,7 @@
   <!-- Include required permissions for Advertising Id -->
   <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
   <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-  <application android:name="crc645ec0a024b2a7f656.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:label="TuPencaUy" android:supportsRtl="true" android:usesCleartextTraffic="true">
+  <application android:name="crc645ec0a024b2a7f656.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="TuPencaUy" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true" android:usesCleartextTraffic="true">
     <!-- Firebase -->
     <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
       <intent-filter>

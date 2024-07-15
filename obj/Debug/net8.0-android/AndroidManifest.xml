@@ -9,7 +9,7 @@
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <application android:allowBackup="true" android:supportsRtl="true" android:name="crc645ec0a024b2a7f656.MainApplication" android:usesCleartextTraffic="true" android:label="TuPencaUy" android:debuggable="true" android:extractNativeLibs="true">
+  <application android:allowBackup="true" android:supportsRtl="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:name="crc645ec0a024b2a7f656.MainApplication" android:usesCleartextTraffic="true" android:label="TuPencaUy" android:debuggable="true" android:extractNativeLibs="true">
     <!-- Firebase -->
     <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
       <intent-filter>
