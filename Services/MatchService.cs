@@ -1,6 +1,5 @@
 using TuPencaUy.Models;
 using TuPencaUy.Services.Interfaces;
-using Task = Android.Gms.Tasks.Task;
 
 namespace TuPencaUy.Services;
 

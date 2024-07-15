@@ -26,7 +26,7 @@
             <!-- Error message -->
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsEmpty}">
                 <Image Source="{icons:Material Icon=QuestionMark}" />
-                <Label Text="No se encontraron partidos!" />
+                <Label Text="No matches found!" />
             </StackLayout>
             <CollectionView ItemsSource="{Binding Matches}">
                 <CollectionView.ItemTemplate>

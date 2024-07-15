@@ -29,7 +29,7 @@ public partial class LoginViewModel(ISessionService sessionService) : Observable
         }
         else
         {
-            await Application.Current.MainPage.DisplayAlert("Error al loguearse", loginResult.Message, "OK");
+            await Application.Current.MainPage.DisplayAlert("Login error", loginResult.Message, "OK");
         }
     }
 
@@ -45,7 +45,7 @@ public partial class LoginViewModel(ISessionService sessionService) : Observable
         }
         else
         {
-            await Application.Current.MainPage.DisplayAlert("Error al loguearse", loginResult.Message, "OK");
+            await Application.Current.MainPage.DisplayAlert("Login error", loginResult.Message, "OK");
         }
     }
 

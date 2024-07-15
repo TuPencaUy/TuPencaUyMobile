@@ -3,10 +3,11 @@ using Microsoft.Extensions.Logging;
 using TuPencaUy.Services;
 using TuPencaUy.ViewModel;
 using MauiIcons.Material;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Maui.LifecycleEvents;
 using Plugin.Firebase.Auth;
 using TuPencaUy.Views;
-using Plugin.Firebase.Auth;
 using TuPencaUy.Services.Interfaces;
 #if IOS
 using Plugin.Firebase.Core.Platforms.iOS;

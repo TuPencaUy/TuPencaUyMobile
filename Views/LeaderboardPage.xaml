@@ -18,7 +18,7 @@
             <!-- Error message -->
             <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsEmpty}">
                 <Image Source="{icons:Material Icon=QuestionMark}" />
-                <Label Text="No se obtuvieron resultados." />
+                <Label Text="No results were obtained." />
             </StackLayout>
             <CollectionView Grid.Row="1" ItemsSource="{Binding Participants}">
                 <CollectionView.ItemTemplate>

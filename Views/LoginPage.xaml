@@ -13,34 +13,34 @@
             <Image
                 Source="tupencauy_logo.png"
                 HeightRequest="185"
-                Aspect="AspectFit"/>
+                Aspect="AspectFit" />
 
             <Label
-                Text="Bienvenido a tupenca.uy!"
+                Text="Welcome to tupenca.uy!"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" 
-                Margin="40"/>
+                SemanticProperties.HeadingLevel="Level1"
+                Margin="40" />
 
             <ImageButton Grid.Column="1"
-                         Margin= "10,10, 20, 10"
+                         Margin="10,10, 20, 10"
                          CornerRadius="25"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="Start"
                          Command="{Binding Path=LoginAuth0Command}"
-                         Source="google_logo.png"/>
-            
+                         Source="google_logo.png" />
+
             <Entry
                 x:Name="EmailEntry"
                 Placeholder="Email"
                 Text="{Binding Email}"
-                Margin="0, 0, 0, 20"/>
-            
+                Margin="0, 0, 0, 20" />
+
             <Entry
                 x:Name="PasswordEntry"
-                Placeholder="Contraseña" 
+                Placeholder="Password"
                 IsPassword="True"
                 Text="{Binding Password}"
-                Margin="0, 0, 0, 20"/>
+                Margin="0, 0, 0, 20" />
 
             <Button
                 x:Name="LoginBtn"
@@ -48,7 +48,7 @@
                 SemanticProperties.Hint="Login"
                 Command="{Binding Path=LoginCommand}"
                 HorizontalOptions="Fill"
-                Margin="0, 0, 0, 10"/>
+                Margin="0, 0, 0, 10" />
             <Button
                 x:Name="RegisterBtn"
                 Text="Signup"

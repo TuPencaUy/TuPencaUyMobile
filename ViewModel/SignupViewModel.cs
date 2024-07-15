@@ -35,7 +35,7 @@ public partial class SignupViewModel : ObservableObject
         
         if (registerResult is { Error: true })
         {
-            await Application.Current.MainPage.DisplayAlert($"Error al registrarse en ${siteUrl}", registerResult.Message, "OK");
+            await Application.Current.MainPage.DisplayAlert($"Error on signup in ${siteUrl}", registerResult.Message, "OK");
         }
         else
         {

@@ -19,7 +19,7 @@ public partial class EventsViewModel : ObservableObject
         IsEmpty = false;
         IsLoading = true;
 
-        if (!user.Events.IsNullOrEmpty()) Events = new ObservableCollection<Event>(user.Events);
+        if (user.Events != null) Events = new ObservableCollection<Event>(user.Events);
 
         IsEmpty = Events.IsNullOrEmpty();
         IsLoading = false;

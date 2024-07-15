@@ -20,7 +20,6 @@ public partial class BetViewModel(IBetService betService) : ObservableObject
     private string? SiteUrl { get; set; }
     private string? Token { get; set; }
     private string? UserEmail { get; set; }
-
     private Bet? BetData { get; set; }
 
     public async void InitializePrediction(string siteUrl, string token, string userEmail)
@@ -45,7 +44,7 @@ public partial class BetViewModel(IBetService betService) : ObservableObject
     {
         if (FirstTeamScore is null or < 0 || SecondTeamScore is null or < 0)
         {
-            await Application.Current.MainPage.DisplayAlert("Error", "Por favor, ingrese valores numericos validos.",
+            await Application.Current.MainPage.DisplayAlert("Error", "Please enter valid numerical values.",
                 "OK");
         }
         else if (BetData == null)

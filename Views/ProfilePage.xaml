@@ -7,13 +7,13 @@
     <ContentPage.Content>
         <StackLayout >
             <Label
-                Text="Perfil"
+                Text="Profile"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level1"
                 Margin="0,0,0,40"/>
             
             <Label
-                Text="Nombre"
+                Text="Name"
                 FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="15"
@@ -26,7 +26,7 @@
                 Margin="20,0,0,40"/>
 
             <Label
-                Text="Correo"
+                Text="Email"
                 FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="15"
@@ -40,8 +40,8 @@
             
             <Button
                 x:Name="LogoutBtn"
-                Text="Cerrar Sesión"
-                SemanticProperties.Hint="Cerrar Sesión"
+                Text="Logout"
+                SemanticProperties.Hint="Logout"
                 Command="{Binding Path=LogoutCommand}"
                 HorizontalOptions="Center"
                 

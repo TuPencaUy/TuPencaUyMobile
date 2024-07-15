@@ -16,7 +16,7 @@
                     Aspect="AspectFit"/>
 
                 <Label
-                    Text="Bienvenido a tupenca.uy!"
+                    Text="Welcome to tupenca.uy!"
                     Style="{StaticResource Headline}"
                     SemanticProperties.HeadingLevel="Level1" />
 

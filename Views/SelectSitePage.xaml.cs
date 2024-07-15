@@ -23,7 +23,12 @@ public partial class SelectSitePage : ContentPage
             JsonConvert.DeserializeObject<SessionData>(await SecureStorage.GetAsync("SESSION") ??
                                                        string.Empty);
 
-        if (siteUrl != null && sessionData != null && sessionData.Expiration > DateTime.Now.AddMinutes(15))
+        if (siteUrl != null)
+        {
+            _selectSiteViewModel.SiteUrl = siteUrl;
+        }
+
+        if (sessionData != null && sessionData.Expiration > DateTime.Now.AddMinutes(15))
         {
             await _selectSiteViewModel.GoToEventPage();
         }

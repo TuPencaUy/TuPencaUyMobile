@@ -27,7 +27,7 @@ public partial class ProfileViewModel(ISessionService sessionService) : Observab
     [RelayCommand]
     private async Task Logout()
     {
-        var logoutConfirmation = await Application.Current.MainPage.DisplayAlert("Cerrar Sesión","Está seguro que desea cerrar la sesión actual?","OK", "Cancelar");
+        var logoutConfirmation = await Application.Current.MainPage.DisplayAlert("Logout","Are you sure you want to close the current session?","OK", "Cancel");
 
         if (logoutConfirmation)
         {

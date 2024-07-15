@@ -8,5 +8,5 @@ public class User(int id, string name, string email, Role role, List<Event> even
     public string Name { get; set; } = name;
     public string Email { get; set; } = email;
     public Role Role { get; set; } = role;
-    public List<Event> Events { get; set; } = events;
+    public List<Event>? Events { get; set; } = events;
 }
