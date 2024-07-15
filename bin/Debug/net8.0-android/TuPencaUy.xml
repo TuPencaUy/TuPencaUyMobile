@@ -92,6 +92,9 @@
             <inheritdoc/>
             <inheritdoc/>
         </member>
+        <member name="P:TuPencaUy.ViewModel.LoginViewModel.SiteUrl">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.LoginViewModel._siteUrl"/>
+        </member>
         <member name="P:TuPencaUy.ViewModel.LoginViewModel.Email">
             <inheritdoc cref="F:TuPencaUy.ViewModel.LoginViewModel._email"/>
         </member>
@@ -168,11 +171,11 @@
         <member name="P:TuPencaUy.ViewModel.SelectSiteViewModel.SiteUrl">
             <inheritdoc cref="F:TuPencaUy.ViewModel.SelectSiteViewModel._siteUrl"/>
         </member>
-        <member name="F:TuPencaUy.ViewModel.SelectSiteViewModel.tapCommand">
-            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.SelectSiteViewModel.TapCommand"/>.</summary>
+        <member name="F:TuPencaUy.ViewModel.SelectSiteViewModel.goToLoginPageCommand">
+            <summary>The backing field for <see cref="P:TuPencaUy.ViewModel.SelectSiteViewModel.GoToLoginPageCommand"/>.</summary>
         </member>
-        <member name="P:TuPencaUy.ViewModel.SelectSiteViewModel.TapCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.SelectSiteViewModel.Tap"/>.</summary>
+        <member name="P:TuPencaUy.ViewModel.SelectSiteViewModel.GoToLoginPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TuPencaUy.ViewModel.SelectSiteViewModel.GoToLoginPage"/>.</summary>
         </member>
         <member name="T:TuPencaUy.ViewModel.SignupViewModel">
             <inheritdoc/>
@@ -387,6 +390,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Participants">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Participants" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SiteUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
         </member>
@@ -398,9 +404,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SiteUrl">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -435,6 +438,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Participants">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Participants" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SiteUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
         </member>
@@ -446,9 +452,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SiteUrl">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SiteUrl" generated properties.</summary>
         </member>
     </members>
 </doc>

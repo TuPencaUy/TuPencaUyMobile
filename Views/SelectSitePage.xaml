@@ -29,7 +29,7 @@
                     x:Name="ContinueBtn"
                     Text="Continue"
                     SemanticProperties.Hint="Continue"
-                    Command="{Binding Path=TapCommand}"
+                    Command="{Binding Path=GoToLoginPageCommand}"
                     HorizontalOptions="Fill" />
             </VerticalStackLayout>
         </ScrollView>
