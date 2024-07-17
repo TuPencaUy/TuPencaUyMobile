@@ -7,7 +7,7 @@ using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
 
-public partial class ProfileViewModel(ISessionService sessionService) : ObservableObject
+public partial class ProfileViewModel(IIdentityService identityService) : ObservableObject
 {
     [ObservableProperty] private string? _name;
     [ObservableProperty] private string? _email;
@@ -30,7 +30,7 @@ public partial class ProfileViewModel(ISessionService sessionService) : Observab
 
         if (logoutConfirmation)
         {
-            await sessionService.Logout();
+            await identityService.Logout();
             await Shell.Current.GoToAsync($"///{nameof(SelectSitePage)}");
         }
     }

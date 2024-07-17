@@ -8,7 +8,7 @@ using TuPencaUy.Views;
 namespace TuPencaUy.ViewModel;
 
 [QueryProperty("SiteUrl", "SiteUrl")]
-public partial class LoginViewModel(ISessionService sessionService) : ObservableObject
+public partial class LoginViewModel(IIdentityService identityService) : ObservableObject
 {
     [ObservableProperty] private string? _siteUrl;
 
@@ -18,11 +18,21 @@ public partial class LoginViewModel(ISessionService sessionService) : Observable
     [RelayCommand]
     private async Task Login()
     {
-        var loginResult = await sessionService.Login(SiteUrl, Email, Password);
+        var siteResult = await identityService.ValidateSite(SiteUrl);
+
+        if (siteResult == null || siteResult.Error)
+        {
+            await Application.Current.MainPage.DisplayAlert("Site error", siteResult.Message, "OK");
+            return;
+        }
+
+        var accessType = siteResult.Data.AccessType;
+
+        var loginResult = await identityService.Login(SiteUrl, Email, Password, accessType);
 
         if (loginResult is { Error: false })
         {
-            sessionService.SaveSession(loginResult.Data, SiteUrl);
+            await identityService.SaveSession(loginResult.Data, SiteUrl);
             await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
         else
@@ -34,11 +44,21 @@ public partial class LoginViewModel(ISessionService sessionService) : Observable
     [RelayCommand]
     private async Task LoginAuth0()
     {
-        var loginResult = await sessionService.LoginAuth0(SiteUrl);
+        var siteResult = await identityService.ValidateSite(SiteUrl);
+
+        if (siteResult == null || siteResult.Error)
+        {
+            await Application.Current.MainPage.DisplayAlert("Site error", siteResult.Message, "OK");
+            return;
+        }
+
+        var accessType = siteResult.Data.AccessType;
+
+        var loginResult = await identityService.LoginAuth0(SiteUrl, accessType);
 
         if (loginResult is { Error: false })
         {
-            sessionService.SaveSession(loginResult.Data, SiteUrl);
+            await identityService.SaveSession(loginResult.Data, SiteUrl);
             await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
         else
@@ -50,7 +70,6 @@ public partial class LoginViewModel(ISessionService sessionService) : Observable
     [RelayCommand]
     private async Task Register()
     {
-        await Shell.Current.GoToAsync(nameof(SignupPage));
-        WeakReferenceMessenger.Default.Send(new DataMessage(SiteUrl));
+        await Shell.Current.GoToAsync($"{nameof(SignupPage)}?SiteUrl={SiteUrl}");
     }
 }

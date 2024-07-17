@@ -13,7 +13,6 @@ public partial class SelectSiteViewModel : ObservableObject
     {
         if (SiteUrl != null)
         {
-            await Shell.Current.GoToAsync(nameof(LoginPage));
             await Shell.Current.GoToAsync($"{nameof(LoginPage)}?SiteUrl={SiteUrl}");
         }
     }

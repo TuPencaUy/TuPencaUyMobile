@@ -11,6 +11,6 @@ public class MatchService : BaseService, IMatchService
     {
         var requestUri = $"{Uri}?eventId={eventId}";
 
-        return await GenerateGetRequest<ApiResponse<EventData>>(siteUrl, requestUri, token);
+        return await GenerateGetRequest<ApiResponse<EventData>>(siteUrl, requestUri, token, true);
     }
 }

@@ -22,7 +22,7 @@
 
                 <Entry
                     x:Name="SiteEntry"
-                    Placeholder="https://yoursite.tupenca.uy/"
+                    Placeholder="https://yoursite.tupencauy.com/"
                     Text="{Binding SiteUrl}"/>
                 
                 <Button

@@ -7,16 +7,16 @@
         <member name="M:TuPencaUy.Services.BaseService.MyRegex">
             <remarks>
             Pattern:<br/>
-            <code>https://(.*?).tupenca.uy/</code><br/>
+            <code>https://(.*?).tupencauy.com/</code><br/>
             Explanation:<br/>
             <code>
             ○ Match the string "https://".<br/>
             ○ 1st capture group.<br/>
                 ○ Match a character other than '\n' lazily any number of times.<br/>
             ○ Match any character other than '\n'.<br/>
-            ○ Match the string "tupenca".<br/>
+            ○ Match the string "tupencauy".<br/>
             ○ Match any character other than '\n'.<br/>
-            ○ Match the string "uy/".<br/>
+            ○ Match the string "com/".<br/>
             </code>
             </remarks>
         </member>
@@ -180,6 +180,9 @@
         <member name="T:TuPencaUy.ViewModel.SignupViewModel">
             <inheritdoc/>
             <inheritdoc/>
+        </member>
+        <member name="P:TuPencaUy.ViewModel.SignupViewModel.SiteUrl">
+            <inheritdoc cref="F:TuPencaUy.ViewModel.SignupViewModel._siteUrl"/>
         </member>
         <member name="P:TuPencaUy.ViewModel.SignupViewModel.Name">
             <inheritdoc cref="F:TuPencaUy.ViewModel.SignupViewModel._name"/>
