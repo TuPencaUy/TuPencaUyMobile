@@ -6,7 +6,6 @@ using MauiIcons.Material;
 using Microsoft.Maui.LifecycleEvents;
 using Plugin.Firebase.Auth;
 using TuPencaUy.Views;
-using Plugin.Firebase.Auth;
 using TuPencaUy.Services.Interfaces;
 #if IOS
 using Plugin.Firebase.Core.Platforms.iOS;
@@ -31,7 +30,7 @@ public static class MauiProgram
         // Initialise the .Net Maui Icons - Material
         builder.UseMauiApp<App>().UseMaterialMauiIcons();
 
-        builder.Services.AddSingleton<ISessionService, IdentityService>();
+        builder.Services.AddSingleton<IIdentityService, IdentityService>();
         builder.Services.AddSingleton<IMatchService, MatchService>();
         builder.Services.AddSingleton<IBetService, BetService>();
         builder.Services.AddSingleton<IAnalyticsService, AnalyticsService>();
@@ -45,8 +44,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<SignupPage>();
         builder.Services.AddSingleton<SignupViewModel>();
 
-        builder.Services.AddSingleton<EventsPage>();
-        builder.Services.AddSingleton<EventsViewModel>();
+        builder.Services.AddTransient<EventsPage>();
+        builder.Services.AddTransient<EventsViewModel>();
 
         builder.Services.AddSingleton<ProfilePage>();
         builder.Services.AddSingleton<ProfileViewModel>();

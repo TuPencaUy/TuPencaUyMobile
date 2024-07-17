@@ -16,20 +16,20 @@
                     Aspect="AspectFit"/>
 
                 <Label
-                    Text="Bienvenido a tupenca.uy!"
+                    Text="Welcome to tupenca.uy!"
                     Style="{StaticResource Headline}"
                     SemanticProperties.HeadingLevel="Level1" />
 
                 <Entry
                     x:Name="SiteEntry"
-                    Placeholder="https://yoursite.tupenca.uy/"
+                    Placeholder="https://yoursite.tupencauy.com/"
                     Text="{Binding SiteUrl}"/>
                 
                 <Button
                     x:Name="ContinueBtn"
                     Text="Continue"
                     SemanticProperties.Hint="Continue"
-                    Command="{Binding Path=TapCommand}"
+                    Command="{Binding Path=GoToLoginPageCommand}"
                     HorizontalOptions="Fill" />
             </VerticalStackLayout>
         </ScrollView>

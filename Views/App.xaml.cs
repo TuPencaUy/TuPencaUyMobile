@@ -1,4 +1,4 @@
-﻿namespace TuPencaUy;
+﻿namespace TuPencaUy.Views;
 
 public partial class App : Application
 {

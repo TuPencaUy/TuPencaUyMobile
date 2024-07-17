@@ -65,7 +65,7 @@
                             HorizontalOptions="Center"
                             VerticalOptions="Center" />
                     </StackLayout>
-                    <Button Text="Confirmar" Clicked="ClosePopup" Command="{Binding ConfirmBetCommand}" Margin="30,20,30,10" />
+                    <Button Text="Confirm" Clicked="ClosePopup" Command="{Binding ConfirmBetCommand}" Margin="30,20,30,10" />
                 </StackLayout>
             </Border>
         </ContentView>

@@ -12,7 +12,7 @@ public class BetService : BaseService, IBetService
     {
         var requestUri = $"{Uri}?eventId={eventId}&matchId={matchId}&userEmail={userEmail}";
 
-        return await GenerateGetRequest<ApiResponse<BetData>>(siteUrl, requestUri, token);
+        return await GenerateGetRequest<ApiResponse<BetData>>(siteUrl, requestUri, token, true);
     }
 
     public async Task<ApiResponse<BetData>?> CreateBet(string siteUrl, string token, int eventId, int matchId,
@@ -27,7 +27,7 @@ public class BetService : BaseService, IBetService
             SecondTeamScore = secondTeamScore
         };
 
-        return await GeneratePostRequest<ApiResponse<BetData>>(siteUrl, requestUri, token, payload);
+        return await GeneratePostRequest<ApiResponse<BetData>>(siteUrl, requestUri, token, payload, true);
     }
 
     public async Task<ApiResponse<BetData>?> UpdateBet(string siteUrl, string token, int eventId, int matchId,
@@ -41,6 +41,6 @@ public class BetService : BaseService, IBetService
             SecondTeamScore = secondTeamScore
         };
 
-        return await GeneratePatchRequest<ApiResponse<BetData>>(siteUrl, requestUri, token, payload);
+        return await GeneratePatchRequest<ApiResponse<BetData>>(siteUrl, requestUri, token, payload, true);
     }
 }

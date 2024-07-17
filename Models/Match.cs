@@ -7,7 +7,8 @@ public class Match(
     int firstTeamScore,
     int secondTeamScore,
     Sport sport,
-    DateTime date)
+    DateTime date,
+    bool finished)
 {
     public int Id { get; set; } = id;
     public Team FirstTeam { get; set; } = firstTeam;
@@ -16,7 +17,8 @@ public class Match(
     public int SecondTeamScore { get; set; } = secondTeamScore;
     public Sport Sport { get; set; } = sport;
     public DateTime Date { get; set; } = date;
-
+    public bool Finished { get; set; } = finished;
     public Bet? Bet { get; set; }
-    public bool isEnabled => Date.AddHours(-1.5) >= DateTime.Now;
+    public bool hasBet => Bet != null;
+    public bool isEnabled => (!Finished) && (Date.AddHours(-1.5) >= DateTime.Now);
 }

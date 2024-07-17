@@ -1,6 +1,5 @@
 using TuPencaUy.Models;
 using TuPencaUy.Services.Interfaces;
-using Task = Android.Gms.Tasks.Task;
 
 namespace TuPencaUy.Services;
 
@@ -12,6 +11,6 @@ public class MatchService : BaseService, IMatchService
     {
         var requestUri = $"{Uri}?eventId={eventId}";
 
-        return await GenerateGetRequest<ApiResponse<EventData>>(siteUrl, requestUri, token);
+        return await GenerateGetRequest<ApiResponse<EventData>>(siteUrl, requestUri, token, true);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using _Microsoft.Android.Resource.Designer;
+using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -16,7 +17,7 @@ public class MainActivity : MauiAppCompatActivity
         FirebaseCloudMessagingImplementation.OnNewIntent(intent);
     }
     
-    protected override void OnCreate(Bundle saveInstanceState)
+    protected override void OnCreate(Bundle? saveInstanceState)
     {
         base.OnCreate(saveInstanceState);
         HandleIntent(Intent);
@@ -38,12 +39,12 @@ public class MainActivity : MauiAppCompatActivity
         var channel = new NotificationChannel(channelId, "General", NotificationImportance.Default);
         notificationManager.CreateNotificationChannel(channel);
         FirebaseCloudMessagingImplementation.ChannelId = channelId;
-        FirebaseCloudMessagingImplementation.SmallIconRef = Resource.Drawable.tupencauy_logo;
+        FirebaseCloudMessagingImplementation.SmallIconRef = ResourceConstant.Drawable.tupencauy_logo;
     }
 
-    protected override void OnNewIntent(Intent intent)
+    protected override void OnNewIntent(Intent? intent)
     {
         base.OnNewIntent(intent);
-        HandleIntent(intent);
+        if (intent != null) HandleIntent(intent);
     }
 }

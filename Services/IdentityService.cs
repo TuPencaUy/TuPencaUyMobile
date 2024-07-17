@@ -5,34 +5,42 @@ using TuPencaUy.Services.Interfaces;
 
 namespace TuPencaUy.Services;
 
-public class IdentityService(Auth0Client auth0Client) : BaseService, ISessionService
+public class IdentityService(Auth0Client auth0Client) : BaseService, IIdentityService
 {
     private const string Uri = "identity";
-    public async Task<ApiResponse<SessionData>?> Login(string siteUrl, string email, string password)
+
+    public async Task<ApiResponse<SiteData>?> ValidateSite(string siteUrl)
     {
-        const string requestUri = $"{Uri}/BasicLogin";
-        var payload = new { Email = email, Password = password };
-        
-        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload);
+        var domainName = GetDomain(siteUrl);
+        var requestUri = $"/site/{domainName}";
+        return await GenerateGetRequest<ApiResponse<SiteData>>(siteUrl, requestUri, null, false);
     }
 
-    public async Task<ApiResponse<SessionData>?> LoginAuth0(string siteUrl)
+    public async Task<ApiResponse<SessionData>?> Login(string siteUrl, string email, string password, int accessType)
+    {
+        var requestUri = $"{Uri}/BasicLogin?siteAccess={accessType}";
+        var payload = new { Email = email, Password = password };
+
+        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload, true);
+    }
+
+    public async Task<ApiResponse<SessionData>?> LoginAuth0(string siteUrl, int accessType)
     {
         var loginResult = await auth0Client.LoginAsync();
-        var payload = loginResult.TokenResponse.IdentityToken;
-        
-        const string  requestUri = $"{Uri}/OAuthLogin";
+        var payload = new { Token = loginResult.TokenResponse.IdentityToken, IsAllowedRegister = true };
 
-        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload);
+        var requestUri = $"{Uri}/OAuthLogin?siteAccess={accessType}";
+
+        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload, true);
     }
 
-    
-    public async Task<ApiResponse<SessionData>?> Signup(string siteUrl, string name, string email, string password)
+    public async Task<ApiResponse<SessionData>?> Signup(string siteUrl, string name, string email, string password,
+        int accessType)
     {
-        const string  requestUri = $"{Uri}/BasicSignup";
-        var payload = new {  Name = name, Email = email, Password = password };
+        var requestUri = $"{Uri}/BasicSignup?siteAccess={accessType}";
+        var payload = new { Name = name, Email = email, Password = password };
 
-        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload);
+        return await GeneratePostRequest<ApiResponse<SessionData>>(siteUrl, requestUri, null, payload, true);
     }
 
     public async Task Logout()
@@ -40,8 +48,8 @@ public class IdentityService(Auth0Client auth0Client) : BaseService, ISessionSer
         await auth0Client.LogoutAsync();
         SecureStorage.RemoveAll();
     }
-    
-    public async void SaveSession(SessionData sessionData, string siteUrl)
+
+    public async Task SaveSession(SessionData sessionData, string siteUrl)
     {
         var sessionJson = JsonConvert.SerializeObject(sessionData);
         await SecureStorage.SetAsync("SESSION", sessionJson);

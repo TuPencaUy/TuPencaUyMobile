@@ -40,7 +40,7 @@
         <!-- Error message -->
         <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsEmpty}">
             <Image Source="{icons:Material Icon=QuestionMark}" />
-            <Label Text="No se encontraron Eventos!" />
+            <Label Text="No Events found!" />
         </StackLayout>
         <CollectionView Grid.Row="1" ItemsSource="{Binding Events}">
             <CollectionView.ItemTemplate>

@@ -2,45 +2,44 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using TuPencaUy.Models;
-using TuPencaUy.Services;
 using TuPencaUy.Services.Interfaces;
 using TuPencaUy.Views;
 
 namespace TuPencaUy.ViewModel;
 
-public partial class SignupViewModel : ObservableObject
+[QueryProperty("SiteUrl", "SiteUrl")]
+public partial class SignupViewModel(IIdentityService identityService) : ObservableObject
 {
+    [ObservableProperty] private string? _siteUrl;
+
     [ObservableProperty] private string? _name;
     [ObservableProperty] private string? _email;
     [ObservableProperty] private string? _password;
 
-    private readonly ISessionService _sessionService;
-    private string? siteUrl { get; set; }
-
-    public SignupViewModel(ISessionService sessionService)
-    {
-        _sessionService = sessionService;
-        
-        if (!WeakReferenceMessenger.Default.IsRegistered<DataMessage>(this))
-        {
-            WeakReferenceMessenger.Default.Register<DataMessage>(this,
-                (recipient, message) => siteUrl = message.Value);
-        }
-    }
-    
     [RelayCommand]
     private async Task Signup()
     {
-        var registerResult = await _sessionService.Signup(siteUrl, _name, Email, Password);
-        
-        if (registerResult is { Error: true })
+        var siteResult = await identityService.ValidateSite(SiteUrl);
+
+        if (siteResult == null || siteResult.Error)
         {
-            await Application.Current.MainPage.DisplayAlert($"Error al registrarse en ${siteUrl}", registerResult.Message, "OK");
+            await Application.Current.MainPage.DisplayAlert("Site error", siteResult.Message, "OK");
+            return;
+        }
+
+        var accessType = siteResult.Data.AccessType;
+
+        var registerResult = await identityService.Signup(SiteUrl, Name, Email, Password, accessType);
+
+        if (registerResult is { Error: false })
+        {
+            await identityService.SaveSession(registerResult.Data, SiteUrl);
+            await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
         }
         else
         {
-            _sessionService.SaveSession(registerResult.Data, siteUrl);
-            await Shell.Current.GoToAsync($"///{nameof(EventsPage)}");
+            await Application.Current.MainPage.DisplayAlert($"Error on signup in ${SiteUrl}", registerResult.Message,
+                "OK");
         }
     }
 }

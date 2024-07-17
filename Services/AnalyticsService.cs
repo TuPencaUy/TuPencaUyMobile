@@ -11,6 +11,6 @@ public class AnalyticsService : BaseService, IAnalyticsService
     {
         var requestUri = $"{Uri}/Leaderboard/{eventId}";
 
-        return await GenerateGetRequest<ApiResponse<LeaderboardData>>(siteUrl, requestUri, token);
+        return await GenerateGetRequest<ApiResponse<LeaderboardData>>(siteUrl, requestUri, token, true);
     }
 }
